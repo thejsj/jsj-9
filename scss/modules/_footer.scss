@@ -1,0 +1,71 @@
+@mixin icon-background($name){
+	background-repeat: no-repeat;
+	@include background-size(contain);
+	@include background-size(50%);
+	background-position: center center;
+	.inlinesvg & {
+		background-image: url("../images/icons/SVG/#{$name}.svg");
+	}
+	.no-inlinesvg & {
+		background-image: url("../images/icons/PNG/#{$name}.png");
+	}
+}
+
+.icon {
+	height: 100px;
+	width: 100px;
+	margin: 10px auto; 
+	@include transition-property(all);
+	@include transition-duration(400ms);
+	@include transition-timing-function(ease-out);
+	@include border-radius(50px);
+
+	&:hover {
+		height: 120px;
+		width: 120px;
+		margin: 0px auto;
+		@include border-radius(60px);
+		@include transition-property(all);
+		@include transition-duration(200ms);
+		@include transition-timing-function(ease-out);
+	}
+
+	.borderradius & {
+		border: solid 2px $header-font-color; 
+	}
+
+	&.github-icon {
+		@include icon-background('github');
+	}
+	&.linkedin-icon {
+		@include icon-background('linkedin');
+	}
+	&.flickr-icon {
+		@include icon-background('flickr');
+	}
+	&.vimeo-icon {
+		@include icon-background('vimeo');
+	}
+	&.twitter-icon {
+		@include icon-background('twitter');
+	}
+}
+
+.main-footer {
+	.row {
+		border-top: solid 3px red; 
+		border-bottom: solid 1px $light-color; 
+		border-bottom: solid 1px $border-red-color; 
+		padding-bottom: 15px; 	
+		margin-bottom: 5px; 	
+	}
+	.padding-top {
+		padding-top: 15px;
+	}
+	.copyright {
+		font-size: 11px;
+		font-style: italic; 
+		color: $light-color;
+		line-height: 2.4em;
+	}
+}

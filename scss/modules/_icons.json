@@ -1,0 +1,38 @@
+{
+    "chars": [
+        {
+            "name": "twitter",
+            "value": "e001",
+            "fontFamily": "icomoon"
+        },
+        {
+            "name": "vimeo",
+            "value": "e000",
+            "fontFamily": "icomoon"
+        },
+        {
+            "name": "flickr",
+            "value": "e004",
+            "fontFamily": "icomoon"
+        },
+        {
+            "name": "linkedin",
+            "value": "e002",
+            "fontFamily": "icomoon"
+        },
+        {
+            "name": "github",
+            "value": "e003",
+            "fontFamily": "icomoon"
+        }
+    ],
+    "fonts": {
+        "svg": "../../fonts/icons.svg",
+        "woff": "../../fonts/icons.woff",
+        "eot": "../../fonts/icons.eot",
+        "ttf": "../../fonts/icons.ttf"
+    },
+    "fontFamily": "icomoon",
+    "options": {},
+    "escapedFontFamily": "\"icomoon\""
+}

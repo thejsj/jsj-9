@@ -1,0 +1,47 @@
+.top-header {
+	
+	h1 {
+		font-size: 2em;
+		font-style: italic;
+		a {
+			color: $header-font-color;
+		}
+	}
+
+	.row {
+		margin-top: 20px; 
+		padding-top: 10px; 
+		border-top: solid red 3px;
+		border-bottom: solid 1px $light-color; 
+		border-bottom: solid 1px $border-red-color; 
+	}
+
+	.logo-image {
+		img {
+			height: 60px; 
+		}
+	}
+}
+
+.main-nav {
+
+	padding-top: 15px;
+
+	.home-link {
+		color: $body-font-color; 
+		padding: 0px 2px;
+		margin: 10px 12px;
+		border-bottom: solid 1px; 
+		border-color: rgba($header-font-color,0);
+		@include transition-property(color);
+		@include transition-duration(300ms);
+		@include transition-timing-function(ease-out);
+		&:hover {
+			color: $header-font-color;
+			border-color: rgba($header-font-color,1);
+			@include transition-property(all);
+			@include transition-duration(100ms);
+			@include transition-timing-function(ease-out);
+		}
+	}
+}

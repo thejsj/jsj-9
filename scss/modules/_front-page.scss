@@ -1,0 +1,122 @@
+.portfolio-container {
+
+	h2 {
+		font-size: 1em; 
+		text-align: left; 
+		font-style: italic; 
+		color: $header-font-color; 
+		line-height: 1em;
+		position: static;
+
+		.front-page & {
+			margin-top: 56px;
+		}
+
+		&.taxonomy-title {
+	 		font-size: 3em;
+			border-bottom: 1px solid;
+			line-height: 2em;
+			margin: 5px 0;
+  		}
+    }
+
+	h4 {
+		font-size: 1em; 
+		text-align: left; 
+		font-style: italic; 
+		color: $header-font-color; 
+		line-height: 1.2em;
+		margin: 10px 0px;
+	}
+
+	.row {
+		
+		border-bottom: solid 1px $light-color; 
+		border-bottom: solid 1px $border-red-color; 
+
+		img {
+			width: 100%;
+			margin: 0px auto;
+			display: block;
+			@include box-shadow(0 0 5px rgba(0, 0, 0, 0.4));
+			@include transition-property(all);
+			@include transition-duration(400ms);
+			@include transition-timing-function(ease-out);
+			&:hover {
+				@include box-shadow(0 0 5px rgba(0, 0, 0, 0.6));
+				@include transition-property(all);
+				@include transition-duration(500ms);
+				@include transition-timing-function(ease-out);
+			}
+		}
+
+		
+		&.single-container {
+			overflow: hidden;
+			height: 250px;
+			padding-top: 5px; 
+			margin-bottom: 5px; 
+			position: static;
+
+			.front-page & {
+				padding-top: 30px;  
+				padding-bottom: 30px;
+			}
+
+			.img-container {
+				position: static;
+				
+			}	
+
+			p {
+				.taxonomy-page & {
+					position: absolute;
+				}
+			}		
+
+			img {
+				@include translate3d(0, 65px);
+
+				.front-page & {
+					@include translate3d(0, 20px);
+				}
+
+				// Hover Transition
+				&:hover {
+					@include translate3d(0, 0px);
+				}
+			}		
+		}
+
+		&.margin-top {
+			margin-top: 20px;
+		}
+
+		&.social-links{
+			padding-bottom: 40px;
+			margin-top: 40px;
+		}
+
+		.large-3 {
+			.img-container {
+				position: static;
+				overflow: hidden;
+				border-bottom: solid 1px $light-color; 
+				border-bottom: solid 1px $border-red-color; 
+				padding: 0px 6px;
+			}
+			img {
+				background: green;
+				@include translate3d(0, 20px);
+				&:hover {
+					@include translate3d(0, 5px);
+					width: 110%;
+					opacity: 50%; 
+				}
+			}	
+			h2 {
+				margin-top: 7px;
+			}
+		}
+	}
+}
