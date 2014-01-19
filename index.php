@@ -2,7 +2,6 @@
 <?php require_once('header.php'); ?>
 	<!-- Projects -->
 	<div class="portfolio-container">
-		<a href="#">
 			<div class="row single-container">
 				<div class="large-7 columns img-container">
 					<a href="#">
@@ -14,8 +13,6 @@
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt tincidunt felis a mattis. Cras viverra eros sagittis est pharetra pellentesque. Donec imperdiet pretium accumsan.</p>
 				</div>
 			</div>
-		</a>
-		<a href="#">
 			<div class="row single-container">
 				<div class="large-7 columns img-container right">
 					<a href="#">
@@ -27,8 +24,6 @@
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt tincidunt felis a mattis. Cras viverra eros sagittis est pharetra pellentesque. Donec imperdiet pretium accumsan.</p>
 				</div>
 			</div>
-		</a>
-		<a href="#">
 			<div class="row single-container">
 				<div class="large-7 columns img-container">
 					<a href="#">
@@ -40,7 +35,6 @@
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt tincidunt felis a mattis. Cras viverra eros sagittis est pharetra pellentesque. Donec imperdiet pretium accumsan.</p>
 				</div>
 			</div>
-		</a>
 		<!-- Plugins -->
 		<div class="row margin-top">
 			<div class="large-3 columns">

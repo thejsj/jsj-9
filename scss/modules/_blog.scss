@@ -1,0 +1,15 @@
+.blog {
+	.portfolio-container {
+		.row {
+			&.single-container {
+
+				height: 165px;
+				margin-bottom: 25px; 
+
+				h2 {
+					margin-top: 10px;
+				}
+			}
+		}
+	}
+}

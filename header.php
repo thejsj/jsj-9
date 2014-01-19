@@ -20,7 +20,7 @@
 			<div class="large-6 columns">
 				<h1 class="logo-image">
 					<a href="index.php">
-						Jorge Silva-Jetter
+						Jorge Silva<span>-Jetter</span>
 					</a>
 				</h1>
 			</div>
@@ -28,7 +28,7 @@
 				<ul class="button-group right">
 					<li><a href="about.php" class="home-link">About</a></li>
 					<li><a href="work.php" class="home-link">Work</a></li>
-					<li><a href="#" class="home-link">Blog</a></li>
+					<li><a href="blog.php" class="home-link">Blog</a></li>
 				</ul>
 			</nav>
 		</div>

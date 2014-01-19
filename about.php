@@ -3,7 +3,10 @@
 
 	<div class="row">
 		<div class="large-8 large-offset-2 columns">
-			<h2 class="page-title">Meet Jorge</h2>
+			<div class="page-title has-paragraph">
+				<h2>Meet Jorge</h2>
+				<p>Oh, he's handsonme, isn't he?</p>
+			</div>
 		</div>
 	</div>
 

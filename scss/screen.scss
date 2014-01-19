@@ -5,95 +5,11 @@
 @import "settings";
 @import "foundation";
 
-$border-red-color: red; //#A52D2D;
-$header-font-color: $body-font-color;
-$light-color: red; // lighten($header-font-color, 20%);
-
 @import "modules/mixins";
+@import "modules/global";
+
 @import "modules/header";
 @import "modules/footer";
 @import "modules/front-page";
-
-body {
-	background-image: url("../images/noise.png");
-}
-
-h1,h2,h3,h4,h5,h6 {
-	text-shadow: 0px 0px 1px rgba(0,0,0,0.2);
-}
-
-h2.page-title {
-	text-align: center; 
-	font-style: italic;
-	font-size: 4em;
-	line-height: 1em;
-	letter-spacing: 0.02em;
-}
-
-.row.featured-image {
-	@include breakpoint(720) {
-		margin-bottom: 50px; 
-	}
-
-	img {
-		.borderradius & {
-			@include border-radius(2px);
-			@include box-shadow(0px 0px 5px rgba(0,0,0,0.5));
-		}
-	}
-}
-
-.entry-content {
-
-	@include breakpoint(720) {
-		margin-bottom: 50px; 
-	}
-
-	img { 
-
-		&.left {
-			max-width: 350px;
-			margin-right: -120px;
-			display: inline-block;
-			float: right !important;
-			padding: 0 0 0 10px;
-			margin-left: 10px;
-			border-left: solid 1px #ccc;
-			margin-bottom: 10px;
-		}
-
-		&.right {
-			max-width: 350px;
-			margin-left: -120px;
-			display: inline-block;
-			float: left !important;
-			padding: 0 10px 0 0;
-			margin-right: 10px;
-			border-right: solid 1px #ccc;
-			margin-bottom: 10px;
-		}
-	}
-
-	blockquote {
-		font-size: 1.5em;
-		margin-bottom: 0;
-		padding-bottom: 0.5625em;
-		@include breakpoint(720) {
-			float: right;
-			display: inline-block;
-			margin-right: -250px;
-			width: 500px;
-		}
-		&.left {
-			float: left;
-			font-size: 1.2em;
-			border-left: 0;
-			border-right: 1px solid;
-			margin-left: -200px;
-			margin-right: 20px;
-			width: 400px;
-
-		}
-	}
-}
-
+@import "modules/content";
+@import "modules/blog";
