@@ -12,6 +12,10 @@ sass-cache/*
 node_modules
 node_modules/*
 
+# Ignore Mustache Cache
+mustache_cache
+mustache_cache/*
+
 # Ignore OS generated files 
 .DS_Store
 .DS_Store?
