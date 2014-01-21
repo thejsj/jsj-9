@@ -5,27 +5,46 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		uglify: {
-			my_target: {
+			dev: {
+				options: {
+					beautify: true,
+					compress: false,
+					preserveComments : 'all',
+					banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+        				'<%= grunt.template.today("yyyy-mm-dd") %> */',
+        			mangle: false,
+				},
 				files: {
-					'js/header.js': ['js/libs/Modernizr-2.7.1.js'],
-					'js/footer.js': ['js/libs/jquery-1.10.2.js', 'js/app/app.js'],
+					'static/js/header.js': ['static/js/libs/Modernizr-2.7.1.js'],
+					'static/js/footer.js': ['static/js/libs/jquery-1.10.2.js', 'js/app/app.js'],
 				}
+			},
+			production: {
+				options: {
+					report : 'gzip',
+					preserveComments : false,
+					mangle: true,
+				},
+				files: {
+					'static/js/header.js': ['static/js/libs/Modernizr-2.7.1.js'],
+					'static/js/footer.js': ['static/js/libs/jquery-1.10.2.js', 'js/app/app.js'],
+				},
 			}
 		},
 		compass: {
-			dist: {
+			dev: {
 				options: {
-					sassDir: 'scss/',
-					cssDir: 'css/',
-					environment: 'production',
+					sassDir: 'static/scss/',
+					cssDir: './',
+					environment: 'development',
 					require: 'zurb-foundation'
 				}
 			},
-			dev: {
+			production: {
 				options: {
-					sassDir: 'scss/',
-					cssDir: 'css/',
-					environment: 'development',
+					sassDir: 'static/scss/',
+					cssDir: './',
+					environment: 'production',
 					require: 'zurb-foundation'
 				}
 			},
@@ -37,20 +56,29 @@ module.exports = function(grunt) {
 					require: ['zurb-foundation','foundation'],
 				},
 				files: {                         // Dictionary of files
-					'css/screen.css' : 'scss/screen.scss',     // 'destination': 'source'
+					'./style.css' : 'static/scss/screen.scss',     // 'destination': 'source'
 				}
+			}
+		},
+		cssmin: {
+			minify: {
+				expand: true,
+				cwd: './',
+				src: ['style.css'],
+				dest: './',
+				ext: '.css'
 			}
 		},
 		watch: {
 			css: {
-				files: ['scss/**/*.scss'],
+				files: ['static/scss/**/*.scss'],
 				tasks: ['compass:dev'],
 				options: {
 					livereload: true,
 				},
 			},
 			js: {
-				files: ['js/*.js'],
+				files: ['static/js/*.js'],
 				tasks: ['uglify'],
 				options: {
 					livereload: true,
@@ -60,11 +88,11 @@ module.exports = function(grunt) {
 		font: {
 			all: {
 			// SVG files to reed in
-			src: ['images/icons/SVG/*.svg'],
+			src: ['static/images/icons/SVG/*.svg'],
 			// Location to output CSS variables
-			destCss: 'scss/modules/_icons.{scss,json,less}',
+			destCss: 'static/scss/modules/_icons.{scss,json,less}',
 			// Location to output fonts (expanded via brace expansion)
-			destFonts: 'fonts/icons.{svg,woff,eot,ttf}',
+			destFonts: 'static/fonts/icons.{svg,woff,eot,ttf}',
 			// OPTIONAL: Specify CSS format (inferred from destCss' extension by default)
 			  // (stylus, less, scss, json)
 			// cssFormat: 'css',
@@ -76,15 +104,21 @@ module.exports = function(grunt) {
 		},
 	});
 
-	// Load the plugin that provides the "uglify" task.
+	// Javascript
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+
+	// SASS
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-imagemin');
-	grunt.loadNpmTasks('grunt-fontsmith');
-	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
+
+	// Not currently in use 
+	grunt.loadNpmTasks('grunt-fontsmith'); // Turn SVGs into Fonts
+	grunt.loadNpmTasks('grunt-contrib-sass'); // Speed up compilation
+	grunt.loadNpmTasks('grunt-contrib-imagemin'); // Minify Images
 
 	// Default task(s).
-	grunt.registerTask('default', ['uglify', 'compass:dev']);
+	grunt.registerTask('default', ['uglify:dev', 'compass:dev']);
+	grunt.registerTask('build', ['compass:production', 'cssmin','uglify:production']);
 
 };

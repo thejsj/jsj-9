@@ -1,125 +1,68 @@
-<?php $class = "front-page portfolio"; ?>
-<?php require_once('header.php'); ?>
-	<!-- Projects -->
-	<div class="portfolio-container">
-			<div class="row single-container">
-				<div class="large-7 columns img-container">
-					<a href="#">
-						<img src="images/coj4.jpg" alt="Image">
-					</a>
-				</div>
-				<div class="large-5 columns img-container">
-					<h2>Click On Jorge</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt tincidunt felis a mattis. Cras viverra eros sagittis est pharetra pellentesque. Donec imperdiet pretium accumsan.</p>
-				</div>
-			</div>
-			<div class="row single-container">
-				<div class="large-7 columns img-container right">
-					<a href="#">
-						<img src="images/coj4.jpg" alt="Image">
-					</a>
-				</div>
-				<div class="large-5 columns img-container">
-					<h2>Click On Jorge</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt tincidunt felis a mattis. Cras viverra eros sagittis est pharetra pellentesque. Donec imperdiet pretium accumsan.</p>
-				</div>
-			</div>
-			<div class="row single-container">
-				<div class="large-7 columns img-container">
-					<a href="#">
-						<img src="images/coj4.jpg" alt="Image">
-					</a>
-				</div>
-				<div class="large-5 columns img-container">
-					<h2>Click On Jorge</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt tincidunt felis a mattis. Cras viverra eros sagittis est pharetra pellentesque. Donec imperdiet pretium accumsan.</p>
-				</div>
-			</div>
-		<!-- Plugins -->
-		<div class="row margin-top">
-			<div class="large-3 columns">
-				<h2>Wordpress Plugins</h2>
-				<p>Somtimes, I also make plugins for Wordpress. Not necessarily because I like making plugins, but because most of them are really bad.</p>
-			</div>
-			<div class="large-3 columns">
-				<div class="img-container">
-					<a href="#">
-						<img src="images/coj4.jpg" alt="Image">
-					</a>
-				</div>
-				<h4>JSJ Gallery Slideshow</h4>
-			</div>
-			<div class="large-3 columns img-container">
-				<div class="img-container">
-					<a href="#">
-						<img src="images/coj4.jpg" alt="Image">
-					</a>
-				</div>
-				<h4>JSJ Code Highlight</h4>
-			</div>
-			<div class="large-3 columns img-container">
-				<div class="img-container">
-					<a href="#">
-						<img src="images/coj4.jpg" alt="Image">
-					</a>
-				</div>
-				<h4>JSJ Github Addon</h4>
-			</div>
-		</div>
-		<!-- Experiment -->
-		<div class="row margin-top">
-			<div class="large-3 columns">
-				<div class="img-container">
-					<a href="#">
-						<img src="images/coj4.jpg" alt="Image">
-					</a>
-				</div>
-				<h4>Node Typewriter</h4>
-			</div>
-			<div class="large-3 columns img-container">
-				<div class="img-container">
-					<a href="#">
-						<img src="images/coj4.jpg" alt="Image">
-					</a>
-				</div>
-				<h4>Plugalicious</h4>
-			</div>
-			<div class="large-3 columns img-container">
-				<div class="img-container">
-					<a href="#">
-						<img src="images/coj4.jpg" alt="Image">
-					</a>
-				</div>
-				<h4>Beziers</h4>
-			</div>
-			<div class="large-3 columns">
-				<h2>Experiments</h2>
-				<p>I also like to experiment with new technology in small, short, and often unrefined projects.</p>
-			</div>
-		</div>
+<?php 
+$json_mode = false;
 
-		<!-- Social Links -->
-		<div class="row social-links">
-			<div class="large-3 columns">
-				<a href="#" alt="github">
-					<div class="icon github-icon"></div>
-				</a>
-			</div>
-			<div class="large-3 columns">
-				<a href="#" alt="github">
-					<div class="icon linkedin-icon"></div>
-				</a>
-			</div>
-			<div class="large-3 columns">
-				<a href="#" alt="github">
-					<div class="icon vimeo-icon"></div>
-				</a>
-			</div>
-			<div class="large-3 columns">
-				<a href="#" alt="github">
-					<div class="icon flickr-icon"></div>
-				</a>
-			</div>
-		</div>
-	</div>
-<?php require_once('footer.php'); ?>
+if(!$json_mode)
+    get_header(); 
+
+?>
+<?php
+
+    $queried_object = get_queried_object();
+
+    if(is_404()){
+        $this_object = new FourOFour();
+    }
+    elseif(is_front_page() || is_home()){
+        $this_object = new Home($queried_object);
+    }
+    elseif(is_singular()){
+         if(is_single() || is_page()){
+            $this_object = new Page($queried_object);
+        }
+    }
+    elseif(is_post_type_archive()){
+        $this_object = new PieceDisplay($queried_object);
+    }
+    elseif(is_category()){
+        $this_object = new PostDisplay($queried_object);
+    }
+    else {
+        $this_object = new FourOFour();
+    }
+
+    // Render Template at the end of the query
+    $this_object->render_template();
+
+    // if(is_archive()){
+    //     $queried_object->post_content .= " is_archive -";
+    // }
+    // if(is_category()){
+    //     $queried_object->post_content .= " is_category -";
+    // }
+    // if(is_post_type_archive()){
+    //     $queried_object->post_content .= " is_post_type_archive -";
+    // }
+    // if(is_search()){
+    //     $queried_object->post_content .= " is_search -";
+    // }
+    // if(is_404()){
+    //     $queried_object->post_content .= " is_404 -";
+    // }
+    // if(is_attachment()){
+    //     $queried_object->post_content .= " is_attachment -";
+    // }
+    // if(is_main_query()){
+    //     $queried_object->post_content .= " is_main_query -";
+    // }
+    // if(is_paged()){
+    //     $queried_object->post_content .= " is_paged -";
+    // }
+    
+   
+
+?>
+<?php 
+
+if(!$json_mode)
+    get_footer(); 
+?>
