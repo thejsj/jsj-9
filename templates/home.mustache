@@ -1,0 +1,74 @@
+	<!-- Projects -->
+	<div class="portfolio-container">
+		{{# featured_work}}
+			<div class="row single-container">
+				<div class="large-7 columns img-container {{# post.even }}right{{/ post.even }}">
+					<a href="{{ post.permalink }}">
+						<img src="{{ post.featured_image.home-page }}" alt="{{ post.post_title }}">
+					</a>
+				</div>
+				<div class="large-5 columns img-container ">
+					<h2>{{ post.post_title }}</h2>
+					<p>{{ post.post_excerpt }}</p>
+				</div>
+			</div>
+		{{/ featured_work}}
+		<!-- Plugins -->
+		<div class="row margin-top">
+			<div class="large-3 columns">
+				<h2>Wordpress Plugins</h2>
+				<p>Somtimes, I also make plugins for Wordpress. Not necessarily because I like making plugins, but because most of them are really bad.</p>
+			</div>
+			{{# featured_wordpress_plugins }}
+			<div class="large-3 columns">
+				<div class="img-container">
+					<a href="{{ post.permalink }}">
+						<img src="{{ post.featured_image.home-page }}" alt="{{ post.post_title }}">
+					</a>
+				</div>
+				<h4>{{ post.post_title }}</h4>
+			</div>
+			{{/ featured_wordpress_plugins }}
+		</div>
+		<!-- Experiment -->
+		<div class="row margin-top">
+			{{# featured_experiments }}
+			<div class="large-3 columns">
+				<div class="img-container">
+					<a href="{{ post.permalink }}">
+						<img src="{{ post.featured_image.home-page }}" alt="{{ post.post_title }}">
+					</a>
+				</div>
+				<h4>{{ post.post_title }}</h4>
+			</div>
+			{{/ featured_experiments }}
+			<div class="large-3 columns">
+				<h2>Experiments</h2>
+				<p>I also like to experiment with new technology in small, short, and often unrefined projects.</p>
+			</div>
+		</div>
+
+		<!-- Social Links -->
+		<div class="row social-links">
+			<div class="large-3 columns">
+				<a href="http://github.com/thejsj/" alt="github">
+					<div class="icon github-icon"></div>
+				</a>
+			</div>
+			<div class="large-3 columns">
+				<a href="http://www.linkedin.com/profile/view?id=167568123" alt="github">
+					<div class="icon linkedin-icon"></div>
+				</a>
+			</div>
+			<div class="large-3 columns">
+				<a href="http://vimeo.com/user13278058" alt="github">
+					<div class="icon vimeo-icon"></div>
+				</a>
+			</div>
+			<div class="large-3 columns">
+				<a href="http://www.flickr.com/photos/91530523@N07/" alt="github">
+					<div class="icon flickr-icon"></div>
+				</a>
+			</div>
+		</div>
+	</div>

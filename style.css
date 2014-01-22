@@ -6977,6 +6977,23 @@ h1, h2, h3, h4, h5, h6 {
   text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
 }
 
+/* line 15, static/scss/modules/_global.scss */
+.four-zero-four {
+  text-align: center;
+}
+/* line 17, static/scss/modules/_global.scss */
+.four-zero-four h1 {
+  font-size: 150px;
+  line-height: 1em;
+}
+@media all and (min-width: 720px) {
+  /* line 17, static/scss/modules/_global.scss */
+  .four-zero-four h1 {
+    font-size: 400px;
+    line-height: 200px;
+  }
+}
+
 /* line 3, static/scss/modules/_header.scss */
 .top-header h1 {
   font-size: 2em;
@@ -7110,11 +7127,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* line 6, static/scss/modules/_footer.scss */
 .inlinesvg .icon.github-icon {
-  background-image: url("../images/icons/SVG/github.svg");
+  background-image: url("static/images/icons/SVG/github.svg");
 }
 /* line 9, static/scss/modules/_footer.scss */
 .no-inlinesvg .icon.github-icon {
-  background-image: url("../images/icons/PNG/github.png");
+  background-image: url("static/images/icons/PNG/github.png");
 }
 /* line 40, static/scss/modules/_footer.scss */
 .icon.linkedin-icon {
@@ -7131,11 +7148,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* line 6, static/scss/modules/_footer.scss */
 .inlinesvg .icon.linkedin-icon {
-  background-image: url("../images/icons/SVG/linkedin.svg");
+  background-image: url("static/images/icons/SVG/linkedin.svg");
 }
 /* line 9, static/scss/modules/_footer.scss */
 .no-inlinesvg .icon.linkedin-icon {
-  background-image: url("../images/icons/PNG/linkedin.png");
+  background-image: url("static/images/icons/PNG/linkedin.png");
 }
 /* line 43, static/scss/modules/_footer.scss */
 .icon.flickr-icon {
@@ -7152,11 +7169,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* line 6, static/scss/modules/_footer.scss */
 .inlinesvg .icon.flickr-icon {
-  background-image: url("../images/icons/SVG/flickr.svg");
+  background-image: url("static/images/icons/SVG/flickr.svg");
 }
 /* line 9, static/scss/modules/_footer.scss */
 .no-inlinesvg .icon.flickr-icon {
-  background-image: url("../images/icons/PNG/flickr.png");
+  background-image: url("static/images/icons/PNG/flickr.png");
 }
 /* line 46, static/scss/modules/_footer.scss */
 .icon.vimeo-icon {
@@ -7173,11 +7190,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* line 6, static/scss/modules/_footer.scss */
 .inlinesvg .icon.vimeo-icon {
-  background-image: url("../images/icons/SVG/vimeo.svg");
+  background-image: url("static/images/icons/SVG/vimeo.svg");
 }
 /* line 9, static/scss/modules/_footer.scss */
 .no-inlinesvg .icon.vimeo-icon {
-  background-image: url("../images/icons/PNG/vimeo.png");
+  background-image: url("static/images/icons/PNG/vimeo.png");
 }
 /* line 49, static/scss/modules/_footer.scss */
 .icon.twitter-icon {
@@ -7194,11 +7211,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* line 6, static/scss/modules/_footer.scss */
 .inlinesvg .icon.twitter-icon {
-  background-image: url("../images/icons/SVG/twitter.svg");
+  background-image: url("static/images/icons/SVG/twitter.svg");
 }
 /* line 9, static/scss/modules/_footer.scss */
 .no-inlinesvg .icon.twitter-icon {
-  background-image: url("../images/icons/PNG/twitter.png");
+  background-image: url("static/images/icons/PNG/twitter.png");
 }
 
 /* line 55, static/scss/modules/_footer.scss */

@@ -17,7 +17,7 @@ if(!$json_mode)
     }
     elseif(is_singular()){
          if(is_single() || is_page()){
-            $this_object = new Page($queried_object);
+            $this_object = new Single($queried_object);
         }
     }
     elseif(is_post_type_archive()){

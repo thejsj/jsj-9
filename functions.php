@@ -16,17 +16,17 @@
 
 /* Include Content Classes
 ---------------------------------------------------------------------- */
-	require_once( trailingslashit( get_stylesheet_directory() ) . 'classes/image.php' );
-	require_once( trailingslashit( get_stylesheet_directory() ) . 'classes/content.php' );
+	require_once( trailingslashit( get_stylesheet_directory() ) . 'views/image.php' );
+	require_once( trailingslashit( get_stylesheet_directory() ) . 'views/content.php' );
 
-	require_once( trailingslashit( get_stylesheet_directory() ) . 'classes/taxonomy.php' );
-	require_once( trailingslashit( get_stylesheet_directory() ) . 'classes/post-display.php' );
-	require_once( trailingslashit( get_stylesheet_directory() ) . 'classes/post-type-archive.php' );
+	require_once( trailingslashit( get_stylesheet_directory() ) . 'views/taxonomy.php' );
+	require_once( trailingslashit( get_stylesheet_directory() ) . 'views/post-display.php' );
+	require_once( trailingslashit( get_stylesheet_directory() ) . 'views/post-type-archive.php' );
 
-	require_once( trailingslashit( get_stylesheet_directory() ) . 'classes/home.php' );
-	require_once( trailingslashit( get_stylesheet_directory() ) . 'classes/page.php' );
+	require_once( trailingslashit( get_stylesheet_directory() ) . 'views/home.php' );
+	require_once( trailingslashit( get_stylesheet_directory() ) . 'views/single.php' );
 	
-	require_once( trailingslashit( get_stylesheet_directory() ) . 'classes/404.php' );
+	require_once( trailingslashit( get_stylesheet_directory() ) . 'views/404.php' );
 
 
 ?>

@@ -4,8 +4,8 @@ Another edition of my site:
 
 ## Todo:
 
-* [ ] Add ACF Options
-* [ ] Add ACF taglines
+* [X] Add ACF Options
+* [X] Add ACF taglines
 * [ ] Added Views for:
 ** [ ] Home Page
 ** [ ] Work Page
@@ -24,3 +24,8 @@ Another edition of my site:
 * [ ] Add analytics
 * [ ] Fix thumbnail images with browser windows
 * [ ] Move blog posts to experiments
+
+## Future Improvement
+
+* [ ] Adding Next/Previous to Single
+* [ ] Addint Next/Previous to Work
