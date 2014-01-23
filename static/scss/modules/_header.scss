@@ -3,8 +3,13 @@
 	h1 {
 		font-size: 2em;
 		font-style: italic;
+		text-align: center;
+		@include breakpoint(720) {
+			text-align: left;
+		}
 		a {
 			color: $header-font-color;
+			border-bottom: 0;
 		}
 	}
 
@@ -24,11 +29,23 @@
 }
 
 .main-nav {
-
-	padding-top: 15px;
+	
+	text-align: center;
+	.top-header & {
+		@include breakpoint(720) {
+			padding-top: 15px;
+		}
+	}
 
 	.home-link {
+
 		display: inline-block;
+		padding-bottom: 10px;
+ 		@include breakpoint(720) {
+ 			float: right;
+ 			padding-bottom: 0px;
+ 		}
+
 		a {
 			color: $body-font-color; 
 			padding: 0px 2px;

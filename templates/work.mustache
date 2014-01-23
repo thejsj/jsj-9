@@ -1,9 +1,9 @@
 	<!-- Projects -->
 	<div class="portfolio-container">
-		<div class="row collapse">
+		<div class="row">
 			<div class="large-5 large-offset-2 columns">
 				<h2 class="taxonomy-title">{{ object.labels.name }}</h2>
-				<p>{{# child_taxonomies }}{{^ first }}, {{/ first }}<a href="{{ permalink }}">{{ name }}</a>{{/ child_taxonomies }}
+				<!--<p>{{# child_taxonomies }}{{^ first }}, {{/ first }}<a href="{{ permalink }}">{{ name }}</a>{{/ child_taxonomies }}-->
 				{{# posts }}
 					{{# post.even }}
 					<div class="row single-container">

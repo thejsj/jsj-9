@@ -21,9 +21,9 @@ class Content {
 		$this->post->post_date_formated = date('l jS \of F Y',strtotime($this->post->post_date));
 		$this->post->featured_image     = new Image($this->ID);
 		$this->post->sub_title          = get_post_meta( $this->ID, 'sub_title', true );
-		if($key != null){
-			$this->post->even           = ($key % 2 == 0 ? true : false);
-		}
+		if($key == null)
+			$key = 0;
+		$this->post->even               = ($key % 2 == 0 ? true : false);
 		return true;
 	}
 

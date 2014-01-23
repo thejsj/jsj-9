@@ -53,19 +53,23 @@
 
 .main-footer {
 	.row {
+		padding-top: 15px;
 		border-top: solid 3px red; 
 		border-bottom: solid 1px $light-color; 
 		border-bottom: solid 1px $border-red-color; 
 		padding-bottom: 15px; 	
 		margin-bottom: 5px; 	
 	}
-	.padding-top {
-		padding-top: 15px;
-	}
 	.copyright {
 		font-size: 11px;
 		font-style: italic; 
 		color: $light-color;
 		line-height: 2.4em;
+		text-align: center; 
+		display: block;
+		@include breakpoint(720) {
+			text-align: left;
+			display: inline;
+		}
 	}
 }

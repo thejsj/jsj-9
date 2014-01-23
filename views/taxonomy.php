@@ -23,7 +23,9 @@
 		 * @return array
 		 */
 		public function get_posts_in_taxonomy($term_id = false, $post_type = 'post', $taxonomy = false){
-			$args = array();
+			$args = array(
+				'posts_per_page' => 10,
+			);
 			if($term_id){
 				$args['cat'] = $term_id;
 			}

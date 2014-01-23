@@ -2,12 +2,18 @@
 
 Another edition of my site. Build in Wordpress and Mustahce. 
 
-Front-end: Compass, Foundation, Grunt
+## Backend
+
+Wordpress, with templates render by Mustahce. 
+
+## Front-end
+
+Compass, Foundation with Grunt for minification
 
 ## Todo:
 
 - Fix image links and regenerate thumbnails
-- Fix Styling
+- Fix Styling for paragraphs line-height and link colors
 - Add redirect pages
 - Add analytics
 - Fix thumbnail images with browser windows
@@ -17,3 +23,4 @@ Front-end: Compass, Foundation, Grunt
 
 - Adding Next/Previous to Single
 - Adding Next/Previous to Work
+- Add Mustache templates by AJAX
