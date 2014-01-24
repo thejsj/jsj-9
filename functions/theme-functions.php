@@ -18,6 +18,7 @@ add_editor_style();
 if ( function_exists( 'add_theme_support' ) ) { 
 	// Add post thumbnail support and declare image sizes
 	add_theme_support('post-thumbnails');
+	add_image_size( 'facebook', 1200, 630, true ); 
 	add_image_size( 'slideshow', 800, 9999 );
 	add_image_size( 'slideshow@2x', 800 * 2, 9999 );
 	add_image_size( 'home-page', 550, 9999 );
@@ -40,7 +41,6 @@ function my_remove_menu_pages() {
 /*
  * Add some classes to our menu
  */
-
 add_filter('nav_menu_css_class', 'my_css_attributes_filter1', 100, 1);
 function my_css_attributes_filter1($var) {
 	if(is_array($var)){
@@ -56,5 +56,10 @@ function my_css_attributes_filter3($var) {
 	}
 	return $var;
 }
+
+/*
+ * Don't let Yoast SEO handle are images
+ */
+add_filter('wpseo_opengraph_image', '__return_false');
 
 ?>

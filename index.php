@@ -1,10 +1,3 @@
-<?php 
-$json_mode = false;
-
-if(!$json_mode)
-    get_header(); 
-
-?>
 <?php
 
     $queried_object = get_queried_object();
@@ -31,7 +24,7 @@ if(!$json_mode)
     }
 
     // Render Template at the end of the query
-    $this_object->render_template();
+    
 
     // if(is_archive()){
     //     $queried_object->post_content .= " is_archive -";
@@ -58,11 +51,9 @@ if(!$json_mode)
     //     $queried_object->post_content .= " is_paged -";
     // }
     
-   
+    $json_mode = false;
 
-?>
-<?php 
-
-if(!$json_mode)
-    get_footer(); 
-?>
+    /* Render Content */
+    get_header(); ?>
+<?php $this_object->render_template(); ?>
+<?php get_footer(); ?>
