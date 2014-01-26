@@ -15,19 +15,24 @@
 	height: 100px;
 	width: 100px;
 	margin: 10px auto; 
-	@include transition-property(all);
-	@include transition-duration(400ms);
-	@include transition-timing-function(ease-out);
 	@include border-radius(50px);
 
-	&:hover {
-		height: 120px;
-		width: 120px;
-		margin: 0px auto;
-		@include border-radius(60px);
+	@include breakpoint(720) {
 		@include transition-property(all);
-		@include transition-duration(200ms);
+		@include transition-duration(400ms);
 		@include transition-timing-function(ease-out);
+	}
+	
+	@include breakpoint(720) {
+		&:hover {
+			height: 120px;
+			width: 120px;
+			margin: 0px auto;
+			@include border-radius(60px);
+			@include transition-property(all);
+			@include transition-duration(200ms);
+			@include transition-timing-function(ease-out);
+		}
 	}
 
 	.borderradius & {

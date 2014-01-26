@@ -13,6 +13,7 @@
 ---------------------------------------------------------------------- */
 	require_once( trailingslashit( get_stylesheet_directory() ) . 'functions/theme-functions.php' );
 	require_once( trailingslashit( get_stylesheet_directory() ) . 'functions/queue-scripts.php' );
+	require_once( trailingslashit( get_stylesheet_directory() ) . 'functions/mustache-loader.php' );
 
 /* Include Content Classes
 ---------------------------------------------------------------------- */

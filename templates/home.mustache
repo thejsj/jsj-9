@@ -2,13 +2,13 @@
 	<div class="portfolio-container">
 		{{# featured_work}}
 			<div class="row single-container">
-				<div class="large-7 columns img-container {{# post.even }}right{{/ post.even }}">
+				<div class="large-7 columns img-container {{^ post.even }}right{{/ post.even }}">
 					<a href="{{ post.permalink }}">
 						<img src="{{ post.featured_image.home_page }}" alt="{{ post.post_title }}">
 					</a>
 				</div>
 				<div class="large-5 columns img-container ">
-					<h2>{{ post.post_title }}</h2>
+					<h2>{{ post.post_title }} {{ post.key }}</h2>
 					<p>{{ post.post_excerpt }}</p>
 				</div>
 			</div>
@@ -35,8 +35,12 @@
 		</div>
 		<!-- Experiment -->
 		<div class="row margin-top border-bottom">
+			<div class="large-3 large-push-9 columns">
+				<h2>Experiments</h2>
+				<p>I also like to experiment with new technology in small, short, and often unrefined projects.</p>
+			</div>
 			{{# featured_experiments }}
-			<div class="large-3 columns">
+			<div class="large-3 large-pull-3 columns">
 				<div class="img-container">
 					<a href="{{ post.permalink }}">
 						<img src="{{ post.featured_image.side }}" alt="{{ post.post_title }}">
@@ -45,10 +49,6 @@
 				<h4>{{ post.post_title }}</h4>
 			</div>
 			{{/ featured_experiments }}
-			<div class="large-3 columns">
-				<h2>Experiments</h2>
-				<p>I also like to experiment with new technology in small, short, and often unrefined projects.</p>
-			</div>
 		</div>
 
 		<!-- Social Links -->

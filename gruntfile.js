@@ -16,7 +16,12 @@ module.exports = function(grunt) {
 				},
 				files: {
 					'static/js/header.js': ['static/js/libs/Modernizr-2.7.1.js'],
-					'static/js/footer.js': ['static/js/libs/jquery-1.10.2.js', 'js/app/app.js'],
+					'static/js/footer.js': [
+						'../../../wp-includes/js/jquery/jquery.js', 
+						'../../../wp-includes/js/jquery/jquery-migrate.min.js',
+						'../../plugins/jsj-gallery-slideshow/js/jsj-gallery-slideshow.js',
+						'js/app/app.js',
+					],
 				}
 			},
 			production: {
@@ -27,7 +32,7 @@ module.exports = function(grunt) {
 				},
 				files: {
 					'static/js/header.js': ['static/js/libs/Modernizr-2.7.1.js'],
-					'static/js/footer.js': ['static/js/libs/jquery-1.10.2.js', 'js/app/app.js'],
+					'static/js/footer.js': ['../../../wp-includes/js/jquery/jquery.js','js/app/app.js'],
 				},
 			}
 		},

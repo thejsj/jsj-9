@@ -1,5 +1,4 @@
 .portfolio-container {
-
 	h2 {
 		font-size: 1em; 
 		text-align: left; 
@@ -7,23 +6,22 @@
 		color: $header-font-color; 
 		line-height: 1em;
 		position: static;
-
 		a:link, a:visited {
 			color: $header-font-color; 
 		}
-
 		.home & {
 			margin-top: 56px;
 		}
-
 		&.taxonomy-title {
-	 		font-size: 3em;
+			font-size: 2em;
+			@include breakpoint(720) {
+				font-size: 3em;
+			}
 			border-bottom: 1px solid;
 			line-height: 2em;
 			margin: 5px 0;
   		}
     }
-
 	h4 {
 		font-size: 1em; 
 		text-align: left; 
@@ -32,19 +30,15 @@
 		line-height: 1.2em;
 		margin: 10px 0px;
 	}
-
 	.row {
-
 		&.border-bottom {
 			border-bottom: solid 1px red;
 		}
-
 		&.pagination {
 			padding-top: 20px; 
 			padding-bottom: 20px; 
 			border-top: 0px;
 		}
-
 		img {
 			width: 100%;
 			margin: 0px auto;
@@ -60,66 +54,54 @@
 				@include transition-timing-function(ease-out);
 			}
 		}
-
-		
 		&.single-container {
 			overflow: hidden;
-			height: 250px;
+			@include breakpoint(720) {
+				height: 250px;	
+			}
 			padding-top: 5px; 
 			margin-bottom: 5px; 
 			position: static;
 			border-bottom: solid 1px $light-color; 
 			border-bottom: solid 1px $border-red-color; 
-
 			.home & {
 				padding-top: 30px;  
 				padding-bottom: 30px;
 			}
-
+			.featured-img-container {
+				max-height: 200px;
+				overflow: hidden;
+			}
 			.img-container {
-				position: static;
+				position: relative;
 				img {
 					max-width: 550px; // Size of the image in the configuration
 				}
-				
 			}	
-
-			p {
-				// .home & {
-				// 	position: absolute;
-				// }
-			}		
-
 			img {
-				min-height: 200px;
 				@include breakpoint(720) {
+					min-height: 200px;
 					@include translate3d(0, 65px);
 				}
-				
 				.home & {
 					@include breakpoint(720) {
 						@include translate3d(0, 30px);
 					}
 				}
-
-				// Hover Transition
-				&:hover {
+				&:hover { // Hover Transition
 					@include breakpoint(720) {
 						@include translate3d(0, 10px);
 					}
 				}
 			}		
 		}
-
 		&.margin-top {
 			margin-top: 20px;
 		}
-
 		&.social-links{
 			padding-bottom: 40px;
 			margin-top: 40px;
 		}
-
 		.large-3 {
 			.img-container {
 				max-height: 150px;

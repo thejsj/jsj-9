@@ -1,22 +1,38 @@
 	<div class="row">
 		<div class="large-10 large-offset-1 columns">
-			<div class="page-title has-paragraph">
+			<div class="page-title {{# post.sub_title }}has-paragraph{{/ post.sub_title }}">
 				<h2>{{ post.post_title }}</h2>
+				{{# post.sub_title }}
 				<p>{{ post.sub_title }}</p>
+				{{/ post.sub_title }}
 			</div>
 		</div>
 	</div>
 
 	<div class="row featured-image">
-		<div class="large-10 large-offset-1 columns">
-			{{& post.featured_image.html }}
+		<div class="large-10 large-centered columns">
+			{{& post.featured_content }}
 		</div>
 	</div>
 
-	<div class="entry-content">
+	<div>
 		<div class="row">
-			<div class="large-6 large-offset-3 columns">
-				{{& post.post_content }}
+			<div class="large-3 columns link-list">
+			<ul>
+			{{# post.links }}
+				<li><a href="{{ url }}" target="{{ target }}" class="button large">{{ title }}</a></li>
+			{{/ post.links }}
+			</ul>
+			</div>
+			<div class="large-6 large-centered columns ">
+				<div class="entry-content">
+					{{& post.post_content }}
+				</div>
+				<!-- Disqus -->
+				<div class="diqus">
+					<div id="disqus_thread"></div>
+					<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+				</div>
 			</div>
 		</div>
 	</div>

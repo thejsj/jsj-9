@@ -12,9 +12,11 @@
 							<div class="entry-content">
 								{{ post.post_excerpt }}
 							</div>
-							<a href="{{ post.permalink }}">
-                                <img src="{{ post.featured_image.home_page }}" alt="{{ post.post_title }}">
-                            </a>
+							<div class="featured-img-container">
+								<a href="{{ post.permalink }}">
+	                                <img src="{{ post.featured_image.home_page }}" alt="{{ post.post_title }}">
+	                            </a>
+	                        </div>
 						</div>
 					</div>
 					{{/ post.even}}
@@ -29,9 +31,11 @@
 								<div class="entry-content">
 									{{ post.post_excerpt }}
 								</div>
-								<a href="{{ post.permalink }}">
-                                    <img src="{{ post.featured_image.home_page }}" alt="{{ post.post_title }}">
-                            	</a>
+								<div class="featured-img-container">
+									<a href="{{ post.permalink }}">
+	                                    <img src="{{ post.featured_image.home_page }}" alt="{{ post.post_title }}">
+	                            	</a>
+	                            </div>
 							</div>
 						</div>
 					{{/ post.even }}

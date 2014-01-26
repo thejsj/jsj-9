@@ -1,36 +1,30 @@
 <?php 
 
-	class Home extends Content {
+	class Home extends Taxonomy {
 
 		public $template_name = "home";
 
 		public function __construct(){
-			$this->featured_work = $this->get_featured_work();
-			$this->featured_wordpress_plugins = $this->get_featured_wordpress_plugins();
+			$this->featured_work = $this->get_post_from_repeater_field('featured_projects');
+			$this->posts = $this->featured_work;
+			$this->featured_wordpress_plugins = $this->get_post_from_repeater_field('featured_wordpress_plugins');
 			$this->featured_experiments = $this->get_featured_experiments();
 		}
 
 		/**
-		 * Get post objets selected in the Options Page for Featured Work (3)
+		 * Get post objets selected in the Options Page for a repeater field
 		 *
 		 * @return array
 		 */
-		public function get_featured_work(){
-			$posts = array(); 
-			for($i = 1; $i < 4; $i++){
-				$post_object = get_field('featured_project_' . $i, 'option');
-				array_push($posts, new Single($post_object, false, $i));
+		public function get_post_from_repeater_field($field_name){
+			$posts = array();
+			$query = get_field($field_name, 'option'); 
+			$i = 0; 
+			foreach($query as $post_object){
+				array_push($posts, new Single($post_object['post'], false, $i));
+				$i++;
 			}
 			return $posts;
-		}
-
-		/**
-		 * Get post objets selected in the Options Page for Wordpress Plugins
-		 *
-		 * @return array
-		 */
-		public function get_featured_wordpress_plugins(){
-			return $this->get_options_posts('wordpress_plugin_pages');
 		}
 
 		/**

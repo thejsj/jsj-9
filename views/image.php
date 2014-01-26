@@ -24,7 +24,7 @@
             $this->home_page2x    = $this->get_background_url_by_size($this->attachment_id, 'home-page@2x');
             $this->side           = $this->get_background_url_by_size($this->attachment_id, 'side');
             $this->side2x         = $this->get_background_url_by_size($this->attachment_id, 'side@2x');
-            $this->facebook_share = $this->get_background_url_by_size($this->attachment_id, 'facebook-share');
+            $this->facebook_share = $this->get_background_url_by_size($this->attachment_id, 'facebook');
         }
 
         /**
@@ -81,6 +81,34 @@
             $paths = preg_split("/[\/]+/", $filename );
             array_pop($paths);
             return implode('/', $paths);
+        }
+
+        /**
+         * Get 'Facebook Share' image for the header
+         * This is used for pages with multiple images
+         *
+         * @return void
+         */
+        public function get_single_facebook_image(){
+             // Get Image Root
+            if(isset($this->sizes) && isset($this->sizes['file'])){
+                $image_root = $this->get_image_location( $this->sizes['file'] );
+                $upload_dir = wp_upload_dir(); 
+                $upload_dir_url = $upload_dir['baseurl'];
+
+                // Display Images
+                if(isset($this->sizes['sizes']) && isset($this->sizes['sizes']['facebook'])){
+                    $size = $this->sizes['sizes']['facebook']; ?>
+
+    <!-- Faceook Image : Facebook Share -->
+    <meta property="og:image" content="<?php echo ($upload_dir_url . '/' . $image_root . '/' . $size['file']); ?>">
+    <meta property="og:image:type" content="<?php echo $size['mime-type']; ?>">
+    <meta property="og:image:width" content="<?php echo $size['width']; ?>">
+    <meta property="og:image:height" content="<?php echo $size['height']; ?>">
+
+                <?php }
+            }
+            return true;
         }
     }
 

@@ -1,29 +1,13 @@
 $border-red-color: red; //#A52D2D;
 $header-font-color: $body-font-color;
 $light-color: red; // lighten($header-font-color, 20%);
-
-
 body {
 	// background-color: rgba(210, 255, 0, 0.03); 
 	// background-image: url("static/images/noise.png");
 }
-
 h1,h2,h3,h4,h5,h6 {
 	text-shadow: 0px 0px 1px rgba(0,0,0,0.2);
 }
-
-.four-zero-four {
-	text-align: center; 
-	h1 {	
-		font-size: 150px;
-		line-height: 1em;
-		@include breakpoint(720) {
-			font-size: 400px;
-			line-height: 200px;
-		}
-	}
-}	
-
 a {
 	&:link {
 		color: $header-font-color; 
@@ -36,7 +20,45 @@ a {
 		color: #DC0B0B; 
 	}
 }
-
 img {
 	background-color: #ccc;
+	@include box-shadow(0px 0px 7px rgba(0,0,0,0.2));
+}
+code {
+	font-weight: normal;
+}
+.inline-list > li {
+	margin-left: 0.55em;
+}
+.link-list {
+	.button {
+		@include button(0.5em, white, 5px, true, false, false);
+		color: $header-font-color;
+		border-color: $header-font-color;
+		font-size: 14px;
+		text-transform: uppercase;
+		@include transition-property(all);
+		letter-spacing: 0.04em;
+		&:hover {
+			@include transition-property(all);
+			color: white; 
+			background-color: $header-font-color;
+			letter-spacing: 0.05em;
+		}
+	}
+}
+.four-zero-four {
+	text-align: center; 
+	h1 {	
+		font-size: 150px;
+		line-height: 1em;
+		@include breakpoint(720) {
+			font-size: 400px;
+			line-height: 200px;
+		}
+	}
+}	
+.pagination-notice {
+	font-style: italic; 
+	text-align: center;
 }

@@ -10,9 +10,7 @@
 					<div class="row single-container">
 						{{#post.even}}
 							<div class="large-5 columns img-container">
-								<a href="{{ post.permalink }}">
-									{{& post.featured_image.html }}
-								</a>
+								{{& post.featured_content }}
 							</div>
 						{{/post.even}}
 						<div class="large-7 columns img-container">
@@ -33,9 +31,10 @@
 			{{/posts}}
 			<div class="row pagination">
 				<div class="large-7 large-offset-2 columns">
-					<span class="left">
+					<p class="pagination-notice">No pagination for now... sorry!</p>
+					<!-- <span class="left">
 						<a href="#">&#8592;&nbsp;&nbsp;Previous</a>&nbsp;/</span>
-					<span class="right">/&nbsp;<a href="#">Next&nbsp;&nbsp;&#8594;</a></span>
+					<span class="right">/&nbsp;<a href="#">Next&nbsp;&nbsp;&#8594;</a></span> -->
 				</div>
 			</div>
 		</div>

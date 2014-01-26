@@ -15,7 +15,13 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 @import "modules/icons";
 @import "settings";
-@import "foundation";
+
+@import "foundation/components/global";
+@import "foundation/components/visibility";
+@import "foundation/components/grid";
+@import "foundation/components/buttons";
+@import "foundation/components/type";
+@import "foundation/components/inline-lists";
 
 @import "modules/mixins";
 @import "modules/global";

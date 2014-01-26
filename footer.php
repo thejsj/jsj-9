@@ -4,7 +4,7 @@
 		<div class="row">
 			<nav class="large-6 large-push-6 right columns main-nav"><!-- Because the WordPress walker apprently really sucks... -->
 			<?php wp_nav_menu( array( 
-				'menu_class'     => 'button-group',
+				'menu_class'     => 'inline-list',
 				'theme_location' => 'primary',
 				'items_wrap'     => '<ul id="%1$s" class="home-link %2$s">%3$s</ul>',
 			) ); ?>

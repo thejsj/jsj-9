@@ -12,6 +12,9 @@ class Content {
 		if(!$object && !$id)
 			return false;
 
+		if($key == null)
+			$key = 0;
+
 		$this->ID   = ($object ? $object->ID : $id);
 		$this->post = ($object ? $object : get_post($this->ID)); 
 		$this->post->post_excerpt       = ($this->post->post_excerpt ? $this->post->post_excerpt : wp_trim_excerpt($this->post->post_content));
@@ -19,11 +22,14 @@ class Content {
 		$this->post->post_content       = apply_filters('the_content', $this->post->post_content );
 		$this->post->permalink          = get_permalink($this->ID);
 		$this->post->post_date_formated = date('l jS \of F Y',strtotime($this->post->post_date));
-		$this->post->featured_image     = new Image($this->ID);
 		$this->post->sub_title          = get_post_meta( $this->ID, 'sub_title', true );
-		if($key == null)
-			$key = 0;
 		$this->post->even               = ($key % 2 == 0 ? true : false);
+		$this->post->links              = $this->get_post_links($this->ID);
+
+		// Get Featured Content
+		$this->post->featured_image     = new Image($this->ID);
+		$this->post->featured_content   = $this->get_featured_content();
+
 		return true;
 	}
 
@@ -33,24 +39,8 @@ class Content {
 	 * @return void
 	 */
 	public function render_template(){
-		// Load Mustache PHP
-		/*
-		 * Documentation:
-		 *
-		 * https://github.com/bobthecow/mustache.php/wiki
-		 * https://github.com/bobthecow/mustache.php/wiki/Mustache-Tags
-		 */
-		require dirname(dirname(__FILE__)) . '/Mustache/Autoloader.php';
-
-		Mustache_Autoloader::register();
-
-		$mustache = new Mustache_Engine(array(
-			'cache' => dirname(dirname(__FILE__)).'/mustache_cache',
-			'cache_file_mode' => 0666, // Please, configure your umask instead of doing this :)
-			'cache_lambda_templates' => true,
-			'loader' => new Mustache_Loader_FilesystemLoader(dirname(dirname(__FILE__)).'/templates'),
-			'partials_loader' => new Mustache_Loader_FilesystemLoader(dirname(dirname(__FILE__)).'/templates/partials'),
-		));
+		
+		global $mustache;
 
 		// Render Template
 		if($this->template_name){
@@ -84,7 +74,6 @@ class Content {
 		$terms = array(); 
 		$taxonomies = array(); 
 		foreach($taxonomies_query as $taxonomy){
-			// echo json_encode($taxonomy);
 			array_push($taxonomies, $taxonomy->name);
 		}
 		$terms = get_terms( $taxonomies );
@@ -100,24 +89,97 @@ class Content {
 	}
 
 	/**
-	 * For singles, use the post image to genarate a facebook image tag
+	 * Get all links attached to this post with their respective urls 
 	 *
-	 * @see https://developers.facebook.com/docs/web/tutorials/scrumptious/open-graph-object/
+	 * @return array
+	 */
+	public function get_post_links($id){
+		$items = get_field('post_links', $id);
+		$links = array();
+		if(isset($items) && gettype($items) == 'array' && count($items) > 0){
+			foreach($items as $item){
+				$this_item = array(); 
+				$this_item['title'] = $item['title'];
+				if($item['type'] == 'url'){
+					$this_item['url'] = $item['url'];
+					$this_item['target'] = '_blank';
+				}
+				if($item['type'] == 'post'){
+					$this_item['url'] = get_permalink($item['post']->ID);
+					$this_item['target'] = '_self';
+				}
+				array_push($links, $this_item);
+			}
+		}
+		return $links;
+	}
+	/**
+	 * Get featured content : Get featured image, gallery, or video, depending on value chosen by user in the backend
+	 *
 	 * @return string
 	 */
-	public function get_facebook_image_tags(){
-		if(isset($this->post) && isset($this->post->featured_image)){
-			return $this->post->featured_image->generate_image_tags();
+	public function get_featured_content(){
+		global $mustache;
+		$return = array();
+		$return['type'] = get_post_meta($this->ID, 'type', true);
+		if($return['type'] == 'gallery'){
+			return $this->get_acf_gallery_shortcode($this->ID);
 		}
+		else if($return['type'] == 'vimeo'){
+			$this->post->vimeo_id = get_post_meta($this->ID, 'vimeo_video_id', true);
+			if($this->post->vimeo_id){
+				$template = $mustache->loadTemplate('vimeo-video'); 
+				return $template->render($this->post);
+			}
+		}
+		else if($return['type'] == 'youtube'){
+			$this->post->youtube_id = get_post_meta($this->ID, 'youtube_video_id', true);
+			if($this->post->youtube_id){
+				$template = $mustache->loadTemplate('youtube-video'); 
+				return $template->render($this->post);
+			}
+		}
+		// If none of this works, render the featured image
+		$template = $mustache->loadTemplate('featured-image'); 
+		return $template->render($this->post);
+	}
+
+
+	/**
+	 * Get HTML for a Featured Gallery in ACF
+	 *
+	 * @return string
+	 */
+	function get_acf_gallery_shortcode($post_id){
+        $image_ids = get_field('gallery', $post_id, false);
+        echo json_encode($image_ids);
+        if(isset($image_ids) && gettype($image_ids) == 'array' && count($image_ids) > 0){
+        	$shortcode = '[gallery ids="' . implode(',', $image_ids) . '"]';
+       		return do_shortcode( $shortcode );
+        }
 	}
 
 	/**
-	 * For singles, get featured image facebook share
+	 * Get an array of images, for an ACF Featured Gallery, provided a post_id
 	 *
-	 * @return string
+	 * @return array
 	 */
-	public function get_main_image_src(){
-		return $this->post->featured_image->facebook_share; 
+	function get_acf_gallery_images($post_id, $number_of_images = 5){
+		$image_ids = get_field('main_gallery', $post_id);
+		$return = array();
+		if( $image_ids ){
+			for($i = 0; $i < count($image_ids); $i++ ) {
+				if($i < $number_of_images){
+					$image = new stdClass();
+					$image->src = $image_ids[$i]['sizes']['large'];
+					$image->alt = $image_ids[$i]['alt'];
+					array_push($return, $image);
+				}
+				else {
+					break;
+				}
+			}
+		}
 	}
 }
 

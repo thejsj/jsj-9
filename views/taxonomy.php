@@ -38,5 +38,29 @@
 			$query = new WP_Query( $args );
 			return $query->posts;
 		}
+
+		/**
+		 * For singles, use the post image to genarate a facebook image tag
+		 *
+		 * @see https://developers.facebook.com/docs/web/tutorials/scrumptious/open-graph-object/
+		 * @return string
+		 */
+		public function get_facebook_image_tags(){
+			if(isset($this->posts)){
+				foreach($this->posts as $post){
+					$post->post->featured_image->get_single_facebook_image();
+				}
+				return true;
+			}
+		}
+
+		/**
+		 * For singles, get featured image facebook share
+		 *
+		 * @return string
+		 */
+		public function get_main_image_src(){
+			return 'hello';
+		}
 	}
 ?>

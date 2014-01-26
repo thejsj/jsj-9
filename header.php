@@ -9,13 +9,16 @@
     <?php echo(is_search()) ? '<meta name="robots" content="noindex, nofollow" />' : ''; ?>
     <title><?php wp_title( '|', true, 'right' ); ?></title>
     
-     <!-- HTML Meta Tags -->
+    <!-- HTML Meta Tags -->
     <meta name="title" content="<?php wp_title( '|', true, 'right' ); ?>">
     <meta name="author" content="Jorge Silva-jetter, jorge.silva@thejsj.com">
     <meta name="copyright" content="<?php echo ' Copyright' . bloginfo('name') . '. All Rights Reserved.';?>">
     <!-- <meta name="google-site-verification" content=""/> -->
     <meta name="viewport" id="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=10.0,initial-scale=1.0" />
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo('url'); ?>/favicon.ico">
 
     <!-- Facebook : Details-->
     <meta property="og:title" content=""/>
@@ -41,6 +44,7 @@
     <!-- CSS : Concatanted styles generated with SCSS -->
     <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
     <?php endif; ?>
+
     <!-- WP Head -->
     <?php wp_head(); ?>
 
@@ -71,7 +75,7 @@
             </div>
             <nav class="large-6 columns main-nav"><!-- Because the WordPress walker apprently really sucks... -->
             <?php wp_nav_menu( array( 
-                'menu_class' => 'button-group',
+                'menu_class' => 'inline-list',
                 'theme_location' => 'primary',
                 'items_wrap'      => '<ul id="%1$s" class="home-link %2$s">%3$s</ul>',
             ) ); ?>
