@@ -51,10 +51,10 @@
 			@include transition-duration(300ms);
 			@include transition-timing-function(ease-out);
 			&:hover {
-				color: $black;
-				border-color: rgba($black,0.8);
+				color: $link-hover-color;
+				border-color: rgba($link-hover-color,0.8);
 				@include transition-property(all);
-				@include transition-duration(100ms);
+				@include transition-duration(200ms);
 				@include transition-timing-function(ease-out);
 			}
 		}

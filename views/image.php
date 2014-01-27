@@ -47,13 +47,14 @@
          * @return string
          */
         public function generate_image_tags(){
-            // Get Image Root
-            $image_root = $this->get_image_location( $this->sizes['file'] );
-            $upload_dir = wp_upload_dir(); 
-            $upload_dir_url = $upload_dir['baseurl']; 
+            if(isset($this->sizes) && isset($this->sizes['file'])){
+                // Get Image Root
+                $image_root = $this->get_image_location( $this->sizes['file'] );
+                $upload_dir = wp_upload_dir(); 
+                $upload_dir_url = $upload_dir['baseurl']; 
 
-            // Display Images
-            foreach($this->sizes['sizes'] as $key => $size){ ?>
+                // Display Images
+                foreach($this->sizes['sizes'] as $key => $size){ ?>
     
     <!-- Faceook Image : <?php echo $key; ?> -->
     <meta property="og:image" content="<?php echo ($upload_dir_url . '/' . $image_root . '/' . $size['file']); ?>">
@@ -67,7 +68,7 @@
     <meta property="og:image" content="<?php echo ($upload_dir_url . $image_root . '/' . $this->sizes['file']); ?>">
     <meta property="og:image:width" content="<?php echo  $this->sizes['width']; ?>">
     <meta property="og:image:height" content="<?php echo  $this->sizes['height']; ?>">
-            <?php
+                <?php }
             return true;
         }
 

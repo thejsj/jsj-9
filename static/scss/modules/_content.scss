@@ -44,6 +44,8 @@
 		margin-bottom: 20px;
 		overflow-y: hidden;
 		overflow: hidden;
+		font-size: 1em;
+		line-height: 1.4em;
 		@include breakpoint(720) {
 			position: absolute; 
 			line-height: 1.5em;

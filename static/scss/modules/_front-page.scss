@@ -56,17 +56,22 @@
 		}
 		&.single-container {
 			overflow: hidden;
-			@include breakpoint(720) {
-				height: 250px;	
-			}
 			padding-top: 5px; 
 			margin-bottom: 5px; 
 			position: static;
 			border-bottom: solid 1px $light-color; 
 			border-bottom: solid 1px $border-red-color; 
+			h2 {
+				@include breakpoint(720) {
+					margin-top: 20px;	
+				}
+			}
 			.home & {
 				padding-top: 30px;  
 				padding-bottom: 30px;
+				@include breakpoint(720) {
+					height: 250px;	
+				}
 			}
 			.featured-img-container {
 				max-height: 200px;
@@ -79,6 +84,7 @@
 				}
 			}	
 			img {
+				width: 98%;
 				@include breakpoint(720) {
 					min-height: 200px;
 					@include translate3d(0, 65px);
@@ -96,7 +102,7 @@
 			}		
 		}
 		&.margin-top {
-			margin-top: 20px;
+			margin-top: 30px;
 		}
 		&.social-links{
 			padding-bottom: 40px;
@@ -104,7 +110,7 @@
 		}
 		.large-3 {
 			.img-container {
-				max-height: 150px;
+				height: 120px;
 				position: static;
 				overflow: hidden;
 				border-bottom: solid 1px $light-color; 
@@ -112,7 +118,6 @@
 				padding: 0px 6px;
 			}
 			img {
-				min-height: 150px;
 				@include translate3d(0, 20px);
 				&:hover {
 					@include translate3d(0, 5px);
