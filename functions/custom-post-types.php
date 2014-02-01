@@ -55,7 +55,7 @@ function create_post_type() {
         'show_ui'            => true,
         'show_in_menu'       => true,
         'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'experiment' ),
+        'rewrite'            => array( 'slug' => 'experiments' ),
         'capability_type'    => 'post',
         'has_archive'        => true,
         'hierarchical'       => false,
