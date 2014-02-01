@@ -29,7 +29,9 @@ class Content {
 		// Get Featured Content
 		$this->post->featured_image     = new Image($this->ID);
 		$this->post->featured_content   = $this->get_featured_content();
-
+		if($this->post->featured_content == ""){
+			$this->post->featured_content = false;
+		}
 		return true;
 	}
 
@@ -139,9 +141,11 @@ class Content {
 				return $template->render($this->post);
 			}
 		}
-		// If none of this works, render the featured image
-		$template = $mustache->loadTemplate('featured-image'); 
-		return $template->render($this->post);
+		else if($this->post->featured_image){
+			// If none of this works, render the featured image
+			$template = $mustache->loadTemplate('featured-image'); 
+			return $template->render($this->post);
+		}
 	}
 
 
@@ -152,7 +156,6 @@ class Content {
 	 */
 	function get_acf_gallery_shortcode($post_id){
         $image_ids = get_field('gallery', $post_id, false);
-        echo json_encode($image_ids);
         if(isset($image_ids) && gettype($image_ids) == 'array' && count($image_ids) > 0){
         	$shortcode = '[gallery ids="' . implode(',', $image_ids) . '"]';
        		return do_shortcode( $shortcode );

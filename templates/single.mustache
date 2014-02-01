@@ -1,6 +1,6 @@
 	<div class="row">
 		<div class="large-10 large-offset-1 columns">
-			<div class="page-title {{# post.sub_title }}has-paragraph{{/ post.sub_title }}">
+			<div class="page-title {{# post.sub_title }}has-paragraph{{/ post.sub_title }} {{# post.featured_content }}has-featured-content{{/ post.featured_content }}">
 				<h2>{{ post.post_title }}</h2>
 				{{# post.sub_title }}
 				<p>{{ post.sub_title }}</p>
@@ -8,13 +8,13 @@
 			</div>
 		</div>
 	</div>
-
+	{{# post.featured_content }}
 	<div class="row featured-image">
 		<div class="large-10 large-centered columns">
 			{{& post.featured_content }}
 		</div>
 	</div>
-
+	{{/ post.featured_content }}
 	<div>
 		<div class="row">
 			<div class="large-3 columns link-list">

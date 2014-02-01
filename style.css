@@ -2438,10 +2438,10 @@ table td {
   -moz-transition-property: all;
   -o-transition-property: all;
   transition-property: all;
-  -webkit-transition-duration: 400ms;
-  -moz-transition-duration: 400ms;
-  -o-transition-duration: 400ms;
-  transition-duration: 400ms;
+  -webkit-transition-duration: 500ms;
+  -moz-transition-duration: 500ms;
+  -o-transition-duration: 500ms;
+  transition-duration: 500ms;
   -webkit-transition-timing-function: ease-out;
   -moz-transition-timing-function: ease-out;
   -o-transition-timing-function: ease-out;
@@ -2456,10 +2456,10 @@ table td {
   -moz-transition-property: all;
   -o-transition-property: all;
   transition-property: all;
-  -webkit-transition-duration: 500ms;
-  -moz-transition-duration: 500ms;
-  -o-transition-duration: 500ms;
-  transition-duration: 500ms;
+  -webkit-transition-duration: 350ms;
+  -moz-transition-duration: 350ms;
+  -o-transition-duration: 350ms;
+  transition-duration: 350ms;
   -webkit-transition-timing-function: ease-out;
   -moz-transition-timing-function: ease-out;
   -o-transition-timing-function: ease-out;
@@ -2589,6 +2589,8 @@ table td {
   text-align: center;
   font-style: italic;
   font-size: 2em;
+  margin-top: 15px;
+  margin-bottom: 15px;
   line-height: 1.1em;
   letter-spacing: 0.02em;
 }
@@ -2598,7 +2600,7 @@ table td {
     font-size: 4em;
   }
 }
-/* line 17, static/scss/modules/_content.scss */
+/* line 19, static/scss/modules/_content.scss */
 .page-title p {
   font-style: italic;
   text-align: center;
@@ -2607,17 +2609,17 @@ table td {
   font-weight: 200;
 }
 
-/* line 25, static/scss/modules/_content.scss */
+/* line 27, static/scss/modules/_content.scss */
 .row.featured-image {
   text-align: center;
 }
 @media all and (min-width: 720px) {
-  /* line 25, static/scss/modules/_content.scss */
+  /* line 27, static/scss/modules/_content.scss */
   .row.featured-image {
     margin-bottom: 50px;
   }
 }
-/* line 32, static/scss/modules/_content.scss */
+/* line 34, static/scss/modules/_content.scss */
 .borderradius .row.featured-image img {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -2630,12 +2632,12 @@ table td {
 }
 
 @media all and (min-width: 720px) {
-  /* line 38, static/scss/modules/_content.scss */
+  /* line 40, static/scss/modules/_content.scss */
   .entry-content {
     margin-bottom: 50px;
   }
 }
-/* line 42, static/scss/modules/_content.scss */
+/* line 44, static/scss/modules/_content.scss */
 .portfolio-container .entry-content {
   max-height: 100px;
   margin-bottom: 20px;
@@ -2645,7 +2647,7 @@ table td {
   line-height: 1.4em;
 }
 @media all and (min-width: 720px) {
-  /* line 42, static/scss/modules/_content.scss */
+  /* line 44, static/scss/modules/_content.scss */
   .portfolio-container .entry-content {
     position: absolute;
     line-height: 1.5em;
@@ -2653,7 +2655,7 @@ table td {
     padding-right: 17px;
   }
 }
-/* line 57, static/scss/modules/_content.scss */
+/* line 59, static/scss/modules/_content.scss */
 .entry-content img.left {
   max-width: 350px;
   margin-right: -120px;
@@ -2664,7 +2666,7 @@ table td {
   border-left: solid 1px #ccc;
   margin-bottom: 10px;
 }
-/* line 67, static/scss/modules/_content.scss */
+/* line 69, static/scss/modules/_content.scss */
 .entry-content img.right {
   max-width: 350px;
   margin-left: -120px;
@@ -2675,14 +2677,14 @@ table td {
   border-right: solid 1px #ccc;
   margin-bottom: 10px;
 }
-/* line 78, static/scss/modules/_content.scss */
+/* line 80, static/scss/modules/_content.scss */
 .entry-content blockquote {
   font-size: 1.5em;
   margin-bottom: 0;
   padding-bottom: 0.5625em;
 }
 @media all and (min-width: 720px) {
-  /* line 78, static/scss/modules/_content.scss */
+  /* line 80, static/scss/modules/_content.scss */
   .entry-content blockquote {
     float: right;
     display: inline-block;
@@ -2690,7 +2692,7 @@ table td {
     width: 500px;
   }
 }
-/* line 88, static/scss/modules/_content.scss */
+/* line 90, static/scss/modules/_content.scss */
 .entry-content blockquote.left {
   float: left;
   font-size: 1.2em;

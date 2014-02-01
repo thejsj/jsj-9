@@ -45,12 +45,12 @@
 			display: block;
 			@include box-shadow(0 0 5px rgba(0, 0, 0, 0.4));
 			@include transition-property(all);
-			@include transition-duration(400ms);
+			@include transition-duration(500ms);
 			@include transition-timing-function(ease-out);
 			&:hover {
 				@include box-shadow(0 0 5px rgba(0, 0, 0, 0.6));
 				@include transition-property(all);
-				@include transition-duration(500ms);
+				@include transition-duration(350ms);
 				@include transition-timing-function(ease-out);
 			}
 		}

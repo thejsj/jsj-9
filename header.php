@@ -18,7 +18,7 @@
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo('url'); ?>/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo('wpurl'); ?>/favicon.ico">
 
     <!-- Facebook : Details-->
     <meta property="og:title" content=""/>
