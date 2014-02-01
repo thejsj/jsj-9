@@ -21,13 +21,13 @@
     <link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo('wpurl'); ?>/favicon.ico">
 
     <!-- Facebook : Details-->
-    <meta property="og:title" content=""/>
+    <!-- <meta property="og:title" content=""/>
     <meta property="og:url" content=""/>
     <meta property="og:site_name" content="Jorge Silva Jetter - Portfolio &amp; Blog"/>
-    <meta property="og:description" content=""/><!-- 297 chars -->
-    <meta property="og:locale" content="en_US">
+    <meta property="og:description" content=""/>--><!-- 297 chars -->
+    <!--<meta property="og:locale" content="en_US">
     <meta property="fb:admins" content="500712220" />
-    <meta property="fb:app_id" content="373037756170611"/>
+    <meta property="fb:app_id" content="373037756170611"/>-->
 
     <!-- Add Twitter -->
     <meta name="twitter:card" content="summary">
