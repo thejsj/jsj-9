@@ -28,7 +28,7 @@
 	text-align: center;
 	.top-header & {
 		@include breakpoint(720) {
-			padding-top: 15px;
+			padding-top: 11px;
 		}
 	}
 	ul.inline-list {

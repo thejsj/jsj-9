@@ -74,7 +74,8 @@
 		display: block;
 		@include breakpoint(720) {
 			text-align: left;
-			display: inline;
+			padding-top: 6px;
+			display: inline-block;
 		}
 	}
 }
