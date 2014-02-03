@@ -19,7 +19,8 @@
 
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo('wpurl'); ?>/favicon.ico">
-
+    
+    <?php /*
     <!-- Facebook : Details-->
     <!-- <meta property="og:title" content=""/>
     <meta property="og:url" content=""/>
@@ -28,6 +29,7 @@
     <!--<meta property="og:locale" content="en_US">
     <meta property="fb:admins" content="500712220" />
     <meta property="fb:app_id" content="373037756170611"/>-->
+    */ ?>
 
     <!-- Add Twitter -->
     <meta name="twitter:card" content="summary">
