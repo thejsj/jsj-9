@@ -34,6 +34,11 @@ input[type="submit"] {
 		min-width: 135px;
 	}
 }
+.ninja-forms-form-wrap {
+	.field-wrap.label-left .ninja-forms-field, .field-wrap.label-left .ninja-forms-star-rating-control {
+		margin-left: 0px;
+	}
+}
 
 .ninja-forms-required-items {
 	margin: 10px 0;
