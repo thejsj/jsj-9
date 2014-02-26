@@ -14,8 +14,6 @@ function load_theme_scripts() {
 	wp_register_script('header', get_template_directory_uri()  . '/static/js/header.js', array(), '', false);
 	wp_enqueue_script('header');
 
-	// deregister_scripts();
-
 	// Load Footer Script
 	wp_deregister_script( 'jquery' );
 	wp_register_script('jquery', get_template_directory_uri()  . '/static/js/footer.js', array(), '', true);

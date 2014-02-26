@@ -16,6 +16,10 @@ node_modules/*
 mustache_cache
 mustache_cache/*
 
+# Fabfile.py
+fabfile.py
+**/fabfile.py
+
 # Ignore OS generated files 
 .DS_Store
 .DS_Store?

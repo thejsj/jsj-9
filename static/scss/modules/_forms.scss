@@ -1,0 +1,15 @@
+input, textarea {
+	border: solid 1px #c7c7c7;
+	background: #f7f7f7;
+	padding: 10px;
+	font-size: 1em;
+	color: #777;
+	@include border-radius(3px);
+}
+
+select {
+	padding: 10px;
+	font-size: 1em;
+	color: #777;
+}
+
