@@ -12,8 +12,19 @@ textarea {
 }
 
 input[type="submit"] {
-	@extend .button;
-	@extend .button.large;
+	@include button(0.5em, white, 5px, true, false, false);
+	color: $header-font-color;
+	border-color: $header-font-color;
+	font-size: 14px;
+	text-transform: uppercase;
+	@include transition-property(all);
+	letter-spacing: 0.04em;
+	&:hover {
+		@include transition-property(all);
+		color: white; 
+		background-color: $header-font-color;
+		letter-spacing: 0.05em;
+	}
 }
 
 .ninja-forms-required-items {
