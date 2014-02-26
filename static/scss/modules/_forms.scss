@@ -1,15 +1,43 @@
-input, textarea {
+input[type="text"], 
+input[type="email"], 
+input[type="tel"],
+textarea {
 	border: solid 1px #c7c7c7;
 	background: #f7f7f7;
 	padding: 10px;
-	font-size: 1em;
+	font-size: 0.8em;
+	line-height: 1.5em;
 	color: #777;
 	@include border-radius(3px);
 }
 
+input[type="submit"] {
+	@extend .button;
+	@extend .button.large;
+}
+
+.ninja-forms-required-items {
+	margin: 10px 0;
+	font-size: 0.8em;
+	font-style: italic;
+}
+
 select {
 	padding: 10px;
-	font-size: 1em;
+	font-size: 1.5em;
 	color: #777;
+}
+
+hr.ninja-forms-field {
+	margin: 15px 0;
+}
+
+.ninja-forms-field-description p {
+	margin-bottom: 5px;
+	font-size: 0.72em;
+}
+
+.ninja-forms-field {
+	margin-bottom: 10px;
 }
 
