@@ -27,6 +27,14 @@ input[type="submit"] {
 	}
 }
 
+.field-wrap.label-left {
+	.ninja-forms-field, 
+	.ninja-forms-star-rating-control {
+		margin-left: 0px;
+		min-width: 135px;
+	}
+}
+
 .ninja-forms-required-items {
 	margin: 10px 0;
 	font-size: 0.8em;
