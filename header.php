@@ -18,18 +18,16 @@
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo('wpurl'); ?>/favicon.ico">
-    
-    <?php /*
-    <!-- Facebook : Details-->
-    <!-- <meta property="og:title" content=""/>
-    <meta property="og:url" content=""/>
-    <meta property="og:site_name" content="Jorge Silva Jetter - Portfolio &amp; Blog"/>
-    <meta property="og:description" content=""/>--><!-- 297 chars -->
-    <!--<meta property="og:locale" content="en_US">
-    <meta property="fb:admins" content="500712220" />
-    <meta property="fb:app_id" content="373037756170611"/>-->
-    */ ?>
+    <link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo('template_url'); ?>/static/ico/favicon.ico">
+    <link rel="icon" type="image/png" href="<?php bloginfo('template_url'); ?>/static/ico/favicon.ico">
+    <link href="<?php bloginfo('template_url'); ?>/static/ico/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link href="<?php bloginfo('template_url'); ?>/static/ico/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" />
+    <link href="<?php bloginfo('template_url'); ?>/static/ico/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" />
+    <link href="<?php bloginfo('template_url'); ?>/static/ico/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" />
+    <link href="<?php bloginfo('template_url'); ?>/static/ico/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" />
+    <link href="<?php bloginfo('template_url'); ?>/static/ico/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" />
+    <link href="<?php bloginfo('template_url'); ?>/static/ico/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" />
+    <link href="<?php bloginfo('template_url'); ?>/static/ico/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" />
 
     <!-- Add Twitter -->
     <meta name="twitter:card" content="summary">
@@ -39,13 +37,11 @@
     <meta name="twitter:image" content="<?php echo $this_object->get_main_image_src(); ?>">
 
     <!-- Javascript -->
-    <?php if(!LOAD_ONLY_DOM): ?>
     <script type="text/javascript" src="//use.typekit.net/dxo7bou.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
     <!-- CSS : Concatanted styles generated with SCSS -->
     <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-    <?php endif; ?>
 
     <!-- WP Head -->
     <?php wp_head(); ?>

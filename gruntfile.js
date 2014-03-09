@@ -112,6 +112,13 @@ module.exports = function(grunt) {
 			cssOptions: {}
 			}
 		},
+		favicons: {
+			options: {},
+			icons: {
+				src: 'static/images/favicon.png',
+				dest: 'static/ico'
+			}
+		},
 	});
 
 	// Javascript
@@ -122,13 +129,16 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 
+	// Images
+	grunt.loadNpmTasks('grunt-favicons');
+
 	// Not currently in use 
 	grunt.loadNpmTasks('grunt-fontsmith'); // Turn SVGs into Fonts
 	grunt.loadNpmTasks('grunt-contrib-sass'); // Speed up compilation
 	grunt.loadNpmTasks('grunt-contrib-imagemin'); // Minify Images
 
 	// Default task(s).
-	grunt.registerTask('default', ['uglify:dev', 'compass:dev']);
-	grunt.registerTask('build', ['compass:production', 'cssmin','uglify:production']);
+	grunt.registerTask('default', ['uglify:dev', 'compass:dev',]);
+	grunt.registerTask('build', ['compass:production', 'cssmin','uglify:production', 'favicons']);
 
 };
