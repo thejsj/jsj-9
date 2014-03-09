@@ -32,7 +32,7 @@
 	}
 	.row {
 		&.border-bottom {
-			border-bottom: solid 1px red;
+			border-bottom: solid 1px $border-color;
 		}
 		&.pagination {
 			padding-top: 20px; 
@@ -59,8 +59,7 @@
 			padding-top: 5px; 
 			margin-bottom: 5px; 
 			position: static;
-			border-bottom: solid 1px $light-color; 
-			border-bottom: solid 1px $border-red-color; 
+			border-bottom: solid 1px $border-color; 
 			h2 {
 				@include breakpoint(720) {
 					margin-top: 20px;	
@@ -86,7 +85,7 @@
 			img {
 				width: 98%;
 				@include breakpoint(720) {
-					min-height: 200px;
+					//min-height: 200px;
 					@include translate3d(0, 65px);
 				}
 				.home & {
@@ -113,8 +112,7 @@
 				height: 120px;
 				position: static;
 				overflow: hidden;
-				border-bottom: solid 1px $light-color; 
-				border-bottom: solid 1px $border-red-color; 
+				border-bottom: solid 1px $border-color; 
 				padding: 0px 6px;
 			}
 			img {

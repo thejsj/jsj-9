@@ -1,13 +1,25 @@
+
+// Typeface
 $body-font-family: "skolar",serif;
 $header-font-family: "skolar",serif;
-$body-font-color: red; 
-$header-font-color: red; 
-$main-color: red;
-$link-color: #DC0B0B; 
-$link-hover-color: #840C0C; 
+
+// Main Colors
+$body-font-color: rgb(0,0,200); 
+$header-font-color: $body-font-color; 
+$main-color: $body-font-color;
+$body-background-color: rgb(245, 246, 252); 
+$border-color: $body-font-color; //#A52D2D;
+$header-font-color: $body-font-color;
+
+// Links
+$link-color: #000078; 
+$link-hover-color: #0C2684; 
+$link-visited-color: #0B23DC; 
+
+// Other
 $black: #222;
 
 // Buttons
-$button-font-color: red;
+$button-font-color: $body-font-color;
 $button-border-width: 2px;
 $shiny-edge-size: 0;

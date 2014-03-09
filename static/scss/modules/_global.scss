@@ -1,8 +1,5 @@
-$border-red-color: red; //#A52D2D;
-$header-font-color: $body-font-color;
-$light-color: red; // lighten($header-font-color, 20%);
 body {
-	// background-color: rgba(210, 255, 0, 0.03); 
+	background-color: $body-background-color;
 	// background-image: url("static/images/noise.png");
 }
 h1,h2,h3,h4,h5,h6 {
@@ -18,7 +15,7 @@ a {
 	&:visited {
 		@include transition-duration(200ms);
 		@include transition-property(all);
-		color: #DC0B0B; 
+		color: $link-visited-color; 
 	}
 	&:hover {
 		@include transition-property(all);

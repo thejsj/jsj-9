@@ -59,16 +59,15 @@
 .main-footer {
 	.row {
 		padding-top: 15px;
-		border-top: solid 3px red; 
-		border-bottom: solid 1px $light-color; 
-		border-bottom: solid 1px $border-red-color; 
+		border-top: solid 3px $body-font-color; 
+		border-bottom: solid 1px $border-color; 
 		padding-bottom: 15px; 	
 		margin-bottom: 5px; 	
 	}
 	.copyright {
 		font-size: 11px;
 		font-style: italic; 
-		color: $light-color;
+		color: $body-font-color;
 		line-height: 2.4em;
 		text-align: center; 
 		display: block;

@@ -3,6 +3,7 @@
 		font-size: 2em;
 		font-style: italic;
 		text-align: center;
+		letter-spacing: 0.05em;
 		@include breakpoint(720) {
 			text-align: left;
 		}
@@ -14,9 +15,8 @@
 	.row {
 		margin-top: 20px; 
 		padding-top: 10px; 
-		border-top: solid red 3px;
-		border-bottom: solid 1px $light-color; 
-		border-bottom: solid 1px $border-red-color; 
+		border-top: solid $border-color 3px;
+		border-bottom: solid 1px $border-color; 
 	}
 	.logo-image {
 		img {
