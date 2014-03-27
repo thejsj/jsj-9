@@ -1,9 +1,10 @@
 .top-header {
 	h1 {
-		font-size: 2em;
-		font-style: italic;
+		font-size: 1.5em;
+		text-transform: uppercase;
+		//font-style: italic;
 		text-align: center;
-		letter-spacing: 0.05em;
+		letter-spacing: 0.1em;
 		@include breakpoint(720) {
 			text-align: left;
 		}
@@ -15,8 +16,8 @@
 	.row {
 		margin-top: 20px; 
 		padding-top: 10px; 
-		border-top: solid $border-color 3px;
-		border-bottom: solid 1px $border-color; 
+		// border-top: solid $border-color 3px;
+	//	border-bottom: solid 1px $border-color; 
 	}
 	.logo-image {
 		img {
@@ -47,6 +48,9 @@
 			margin: 4px 0px;
 			border-bottom: solid 1px; 
 			border-color: rgba($header-font-color,0);
+			font-size: 0.8em;
+			text-transform: uppercase;
+			letter-spacing: 0.1em; 
 			@include transition-property(color);
 			@include transition-duration(300ms);
 			@include transition-timing-function(ease-out);

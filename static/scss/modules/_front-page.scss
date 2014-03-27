@@ -1,7 +1,7 @@
 .portfolio-container {
 	h2 {
 		font-size: 1em; 
-		text-align: left; 
+	//	text-align: left; 
 		font-style: italic; 
 		color: $header-font-color; 
 		line-height: 1em;
@@ -25,14 +25,14 @@
 	h4 {
 		font-size: 1em; 
 		text-align: left; 
-		font-style: italic; 
+	//	font-style: italic; 
 		color: $header-font-color; 
 		line-height: 1.2em;
 		margin: 10px 0px;
 	}
 	.row {
 		&.border-bottom {
-			border-bottom: solid 1px $border-color;
+			border-bottom: solid 1px rgba( 0, 0, 200, 0.109804 ); //$border-color;
 		}
 		&.pagination {
 			padding-top: 20px; 
@@ -60,6 +60,7 @@
 			margin-bottom: 5px; 
 			position: static;
 			border-bottom: solid 1px $border-color; 
+			border-bottom: solid 1px rgba( 0, 0, 200, 0.109804 );
 			h2 {
 				@include breakpoint(720) {
 					margin-top: 20px;	
