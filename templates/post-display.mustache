@@ -1,31 +1,31 @@
 	<!-- Projects -->
-	<div class="portfolio-container">
+	<div class="portfolio-container blog-container">
 		<div class="row">
-			<div class="large-10 large-offset-1 columns">
+			<div class="large-8 large-offset-2 columns">
 				<h2 class="taxonomy-title">Blog</h2>
 				<!-- Add categories in the future --><!-- <p><a href="#">Interactive</a>, <a href="#">Plugins</a>, <a href="#">Code</a>, <a href="#">Print</a>, <a href="#">Web</a></p> -->
 			</div>
 			{{#posts}}
-				<div class="large-9 large-offset-1 columns">
+				<div class="large-8 large-offset-2 columns">
 					<div class="row single-container">
-						{{#post.even}}
+					<!--	{{#post.even}}
 							<div class="large-5 columns img-container">
 								{{& post.featured_content }}
 							</div>
-						{{/post.even}}
-						<div class="large-7 columns img-container">
+						{{/post.even}} -->
+						<div class="large-12 columns img-container">
 							<h2>
 								<a href="{{ post.permalink }}">{{ post.post_title }}</a>
 							</h2>
 							<p>{{& post.post_excerpt }}</p>
 						</div>
-						{{^post.even}}
+					<!--	{{^post.even}}
 							<div class="large-5 columns img-container">
 								<a href="{{ post.permalink }}">
 									{{& post.featured_image.html }}
 								</a>
 							</div>
-						{{/post.even}}
+						{{/post.even}} -->
 					</div>
 				</div>
 			{{/posts}}

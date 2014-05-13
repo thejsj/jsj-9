@@ -42,6 +42,15 @@
  			float: right;
  			padding-bottom: 0px;
  		}
+ 		.current-menu-item {
+			a {
+				color: $link-hover-color;
+				border-color: rgba($link-hover-color,0.8);
+				@include transition-property(all);
+				@include transition-duration(200ms);
+				@include transition-timing-function(ease-out);
+			}		
+		}
 		a {
 			color: $body-font-color; 
 			padding: 0px 2px;
@@ -61,6 +70,7 @@
 				@include transition-duration(200ms);
 				@include transition-timing-function(ease-out);
 			}
+
 		}
 	}
 }
