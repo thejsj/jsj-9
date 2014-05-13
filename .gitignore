@@ -8,6 +8,9 @@
 # Ignore Logs
 .log
 
+# Ignore Config
+config.js
+
 # Ignore Node Modules
 node_modules
 node_modules/*

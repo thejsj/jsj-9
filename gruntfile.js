@@ -1,3 +1,13 @@
+var config = require('./config');
+var moment = require('moment');
+
+ var db = config.databases,
+    lo = db.local,
+    it = db.production,
+    now = moment().format('YYYY-MMMM-D-h-mm-ssa'),
+    mysql = config.mysql,
+    mysqldump = config.mysqldump;
+
 module.exports = function(grunt) {
 
 	// Project configuration.
@@ -119,6 +129,22 @@ module.exports = function(grunt) {
 				dest: 'static/ico'
 			}
 		},
+		// Push our distribution folder to our server
+		shell: {
+	        pull: {
+	            command: [
+					mysqldump + ' -u ' + lo.DB_USER + '  -h ' + lo.DB_HOST + ' -p' + lo.DB_PASSWORD + ' ' + lo.DB_NAME + ' > ./' + config.database_location + '/local-' + now +'.sql',
+					'echo "Local Database Backed Up "',
+					mysqldump + ' -u ' + it.DB_USER + '  -h ' + it.DB_HOST + ' -p' + it.DB_PASSWORD + ' ' + it.DB_NAME + ' > ./' + config.database_location + '/integration-' + now +'.sql',
+					'echo "Integration Database Backed Up "',
+					'cp ./' + config.database_location + '/integration-' + now +'.sql ./' + config.database_location + '/new-local-' + now +'.sql',
+					"sed -i \"\" 's/" + it.table_prefix + "/" + lo.table_prefix + "/g' ./" + config.database_location + "/new-local-" + now + ".sql",
+					mysql + ' -u ' + lo.DB_USER + ' -p' + lo.DB_PASSWORD + ' -e "DROP DATABASE IF EXISTS ' + lo.DB_NAME + '; CREATE DATABASE ' + lo.DB_NAME + ';"',
+					mysql + ' -u ' + lo.DB_USER + ' -p' + lo.DB_PASSWORD + ' ' + lo.DB_NAME + ' < ./' + config.database_location + '/new-local-' + now +'.sql',
+					'echo "Database Migrated"'
+	            ].join('&&')
+	        }
+	    }
 	});
 
 	// Javascript
@@ -136,6 +162,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-fontsmith'); // Turn SVGs into Fonts
 	grunt.loadNpmTasks('grunt-contrib-sass'); // Speed up compilation
 	grunt.loadNpmTasks('grunt-contrib-imagemin'); // Minify Images
+
+	// Database
+	grunt.loadNpmTasks('grunt-shell');
 
 	// Default task(s).
 	grunt.registerTask('default', ['uglify:dev', 'compass:dev',]);
