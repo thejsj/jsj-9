@@ -19,6 +19,10 @@ node_modules/*
 mustache_cache
 mustache_cache/*
 
+# Ignore Database Backups
+database_backups
+database_backups/*
+
 # Fabfile.py
 fabfile.py
 **/fabfile.py
