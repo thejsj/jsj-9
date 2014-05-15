@@ -123,10 +123,15 @@ module.exports = function(grunt) {
 			}
 		},
 		favicons: {
-			options: {},
+			options: {
+				windowsTile: false,
+				trueColor: true,
+				appleTouchBackgroundColor: '#31439c',
+				precomposed: false,
+			},
 			icons: {
-				src: 'static/images/favicon.png',
-				dest: 'static/ico'
+				src: './static/images/favicon.png',
+				dest: './static/ico'
 			}
 		},
 		// Push our distribution folder to our server

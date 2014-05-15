@@ -21,13 +21,9 @@
     <link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo('template_url'); ?>/static/ico/favicon.ico">
     <link rel="icon" type="image/png" href="<?php bloginfo('template_url'); ?>/static/ico/favicon.ico">
     <link href="<?php bloginfo('template_url'); ?>/static/ico/apple-touch-icon.png" rel="apple-touch-icon" />
-    <link href="<?php bloginfo('template_url'); ?>/static/ico/apple-touch-icon-60x60-precomposed.png" rel="apple-touch-icon" sizes="60x60" />
-    <link href="<?php bloginfo('template_url'); ?>/static/ico/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon" sizes="72x72" />
-    <link href="<?php bloginfo('template_url'); ?>/static/ico/apple-touch-icon-76x76-precomposed.png" rel="apple-touch-icon" sizes="76x76" />
-    <link href="<?php bloginfo('template_url'); ?>/static/ico/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon" sizes="114x114" />
-    <link href="<?php bloginfo('template_url'); ?>/static/ico/apple-touch-icon-120x120-precomposed.png" rel="apple-touch-icon" sizes="120x120" />
-    <link href="<?php bloginfo('template_url'); ?>/static/ico/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon" sizes="144x144" />
-    <link href="<?php bloginfo('template_url'); ?>/static/ico/apple-touch-icon-152x152-precomposed.png" rel="apple-touch-icon" sizes="152x152" />
+    <link href="<?php bloginfo('template_url'); ?>/static/ico/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" />
+    <link href="<?php bloginfo('template_url'); ?>/static/ico/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" />
+    <link href="<?php bloginfo('template_url'); ?>/static/ico/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" />
 
     <!-- Add Twitter -->
     <meta name="twitter:card" content="summary">
