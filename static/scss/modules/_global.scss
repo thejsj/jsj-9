@@ -1,6 +1,17 @@
+html {
+	background: white;
+}
+
 body {
-//	background-color: $body-background-color;
+	//	background-color: $body-background-color;
 	// background-image: url("static/images/noise.png");
+	.cssgradients & {
+		background: linear-gradient(rgb(161, 219, 161),transparent ), 
+				linear-gradient( 90deg,rgb(90, 196, 240),transparent ), 
+				linear-gradient( -90deg,rgb(183, 187, 235),transparent );
+		background-blend-mode: screen;
+	}
+	
 }
 h1,h2,h3,h4,h5,h6 {
 	text-shadow: 0px 0px 1px rgba(0,0,0,0.2);

@@ -19,21 +19,3 @@ $(document).ready(function (){
 		createJSJCodeHighlight();
 	}
 });
-
-/* 
-
---------------------------------------
-Window onload trigger - if needed
---------------------------------------
-$(window).load(function() {
-
-});
-
---------------------------------------
-Window resize trigger - if needed
---------------------------------------
-$(window).resize(function() {
-	
-});
-
-*/

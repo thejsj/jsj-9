@@ -25,7 +25,10 @@ module.exports = function(grunt) {
         			mangle: false,
 				},
 				files: {
-					'static/js/header.js': ['static/js/libs/Modernizr-2.7.1.js'],
+					'static/js/header.js': [
+						'static/js/libs/Modernizr-2.8.2.js',
+						'static/js/app/blend-mode-test.js'
+					],
 					'static/js/footer.js': [
 						'../../../wp-includes/js/jquery/jquery.js', 
 						'../../../wp-includes/js/jquery/jquery-migrate.min.js',
@@ -41,7 +44,8 @@ module.exports = function(grunt) {
 				},
 				files: {
 					'static/js/header.js': [
-						'static/js/libs/Modernizr-2.7.1.js'
+						'static/js/libs/Modernizr-2.8.2.js',
+						'static/js/app/blend-mode-test.js'
 					],
 					'static/js/footer.js': [
 						'../../../wp-includes/js/jquery/jquery.js', 
