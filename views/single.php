@@ -1,11 +1,11 @@
-<?php 
+<?php
 
 	class Single extends Content {
 
 		public $template_name = 'single';
 
 		public function __construct( $object = false, $id = false, $key = null ){
-			$this->build_single($object, $id, $key); 
+			$this->build_single($object, $id, $key);
 		}
 
 		/**
@@ -26,7 +26,11 @@
 		 * @return string
 		 */
 		public function get_main_image_src(){
-			return $this->post->featured_image->facebook_share; 
+			if (isset($this->post) && isset($this->post->featured_image) && isset($this->post->featured_image->facebook_share)) {
+				return $this->post->featured_image->facebook_share;
+			} else {
+				return null;
+			}
 		}
 	}
 
