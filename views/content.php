@@ -1,11 +1,11 @@
-<?php 
+<?php
 
 class Content {
 
 	/**
 	 * Get basic info about object
 	 * Try to get it off the queried object, if not, use ie with get_post (they return exactly the same results)
-	 * 
+	 *
 	 * @return void
 	 */
 	public function build_single($object = false, $id = false, $key = null){
@@ -16,7 +16,7 @@ class Content {
 			$key = 0;
 
 		$this->ID   = ($object ? $object->ID : $id);
-		$this->post = ($object ? $object : get_post($this->ID)); 
+		$this->post = ($object ? $object : get_post($this->ID));
 		$this->post->post_excerpt       = ($this->post->post_excerpt ? $this->post->post_excerpt : wp_trim_excerpt($this->post->post_content));
 		$this->post->post_excerpt       = strip_shortcodes(wp_strip_all_tags($this->post->post_excerpt)); // Clean up
 		$this->post->post_content       = apply_filters('the_content', $this->post->post_content );
@@ -36,17 +36,17 @@ class Content {
 	}
 
 	/**
-	 * Load $this template using Mustahce 
+	 * Load $this template using Mustahce
 	 *
 	 * @return void
 	 */
 	public function render_template(){
-		
+
 		global $mustache;
 
 		// Render Template
 		if($this->template_name){
-			$this->template = $mustache->loadTemplate($this->template_name); 
+			$this->template = $mustache->loadTemplate($this->template_name);
 			echo $this->template->render($this);
 		}
 	}
@@ -57,14 +57,14 @@ class Content {
 	 * @return array
 	 */
 	public function get_posts_from_query($query){
-		$posts = array(); 
+		$posts = array();
 		foreach($query as $key => $post){
-			$post_object = new Single($post, false, $key); 
+			$post_object = new Single($post, false, $key);
 			array_push($posts, $post_object);
 		}
-		return $posts; 
+		return $posts;
 	}
-	
+
 	/**
 	 * Given a content post type, get all child taxonomies
 	 *
@@ -73,8 +73,8 @@ class Content {
 	 */
 	public function get_child_taxonomies($post_type){
 		$taxonomies_query = get_object_taxonomies($post_type, 'objects');
-		$terms = array(); 
-		$taxonomies = array(); 
+		$terms = array();
+		$taxonomies = array();
 		foreach($taxonomies_query as $taxonomy){
 			array_push($taxonomies, $taxonomy->name);
 		}
@@ -91,7 +91,7 @@ class Content {
 	}
 
 	/**
-	 * Get all links attached to this post with their respective urls 
+	 * Get all links attached to this post with their respective urls
 	 *
 	 * @return array
 	 */
@@ -100,7 +100,7 @@ class Content {
 		$links = array();
 		if(isset($items) && gettype($items) == 'array' && count($items) > 0){
 			foreach($items as $item){
-				$this_item = array(); 
+				$this_item = array();
 				$this_item['title'] = $item['title'];
 				if($item['type'] == 'url'){
 					$this_item['url'] = $item['url'];
@@ -130,20 +130,20 @@ class Content {
 		else if($return['type'] == 'vimeo'){
 			$this->post->vimeo_id = get_post_meta($this->ID, 'vimeo_video_id', true);
 			if($this->post->vimeo_id){
-				$template = $mustache->loadTemplate('vimeo-video'); 
+				$template = $mustache->loadTemplate('vimeo-video');
 				return $template->render($this->post);
 			}
 		}
 		else if($return['type'] == 'youtube'){
 			$this->post->youtube_id = get_post_meta($this->ID, 'youtube_video_id', true);
 			if($this->post->youtube_id){
-				$template = $mustache->loadTemplate('youtube-video'); 
+				$template = $mustache->loadTemplate('youtube-video');
 				return $template->render($this->post);
 			}
 		}
 		else if($this->post->featured_image){
 			// If none of this works, render the featured image
-			$template = $mustache->loadTemplate('featured-image'); 
+			$template = $mustache->loadTemplate('featured-image');
 			return $template->render($this->post);
 		}
 	}
@@ -160,6 +160,19 @@ class Content {
         	$shortcode = '[gallery ids="' . implode(',', $image_ids) . '"]';
        		return do_shortcode( $shortcode );
         }
+	}
+
+	/**
+	 * For singles, get featured image facebook share
+	 *
+	 * @return string
+	 */
+	public function get_main_image_src(){
+		if (isset($this->post) && isset($this->post->featured_image) && isset($this->post->featured_image->facebook_share)) {
+			return $this->post->featured_image->facebook_share;
+		} else {
+			return null;
+		}
 	}
 
 	/**

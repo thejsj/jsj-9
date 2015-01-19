@@ -1,10 +1,10 @@
-<?php 
-	
+<?php
+
 	class Taxonomy extends Content {
 
 		/**
 		 * Populate variables based on queried object
-		 * 
+		 *
 		 * @return void
 		 */
 		public function build_object($object = false, $id = false, $taxonomy = false){
@@ -12,14 +12,14 @@
 				return false;
 			if($object && property_exists($object, 'term_id')){
 				$this->term_id   = ($object ? $object->term_id : $id);
-				$this->term = ($object ? $object : get_term($this->ID, $taxonomy)); 
-			}			
+				$this->term = ($object ? $object : get_term($this->ID, $taxonomy));
+			}
 			return true;
 		}
 
 		/**
 		 * Get all posts/pieces/experiments in a taxonomy
-		 * 
+		 *
 		 * @return array
 		 */
 		public function get_posts_in_taxonomy($term_id = false, $post_type = 'post', $taxonomy = false){
@@ -39,7 +39,7 @@
 			}
 			if($taxonomy){
 				$args['taxonomy'] = $taxonomy;
-			}			
+			}
 			$query = new WP_Query( $args );
 			return $query->posts;
 		}
@@ -65,7 +65,7 @@
 		 * @return string
 		 */
 		public function get_main_image_src(){
-			return 'hello';
+			return null;
 		}
 	}
 ?>

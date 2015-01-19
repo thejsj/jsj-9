@@ -19,19 +19,6 @@
 				return $this->post->featured_image->generate_image_tags();
 			}
 		}
-
-		/**
-		 * For singles, get featured image facebook share
-		 *
-		 * @return string
-		 */
-		public function get_main_image_src(){
-			if (isset($this->post) && isset($this->post->featured_image) && isset($this->post->featured_image->facebook_share)) {
-				return $this->post->featured_image->facebook_share;
-			} else {
-				return null;
-			}
-		}
 	}
 
 ?>
