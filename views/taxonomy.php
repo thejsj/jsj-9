@@ -30,6 +30,7 @@
 			$args = array(
 				'posts_per_page' => 20,
 				'paged' => (get_query_var('page')) ? get_query_var('page') : 1,
+				'post_status' => 'publish'
 			);
 			if($term_id){
 				$args['cat'] = $term_id;
@@ -40,7 +41,7 @@
 			if($taxonomy){
 				$args['taxonomy'] = $taxonomy;
 			}
-			$query = new WP_Query( $args );
+			$query = new WP_Query($args);
 			return $query->posts;
 		}
 
