@@ -176,6 +176,18 @@ class Content {
 	}
 
 	/**
+	 * For singles, use the post image to genarate a facebook image tag
+	 *
+	 * @see https://developers.facebook.com/docs/web/tutorials/scrumptious/open-graph-object/
+	 * @return string
+	 */
+	public function get_facebook_image_tags(){
+		if(isset($this->post) && isset($this->post->featured_image)){
+			return $this->post->featured_image->generate_image_tags();
+		}
+	}
+
+	/**
 	 * Get an array of images, for an ACF Featured Gallery, provided a post_id
 	 *
 	 * @return array

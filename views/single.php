@@ -7,18 +7,6 @@
 		public function __construct( $object = false, $id = false, $key = null ){
 			$this->build_single($object, $id, $key);
 		}
-
-		/**
-		 * For singles, use the post image to genarate a facebook image tag
-		 *
-		 * @see https://developers.facebook.com/docs/web/tutorials/scrumptious/open-graph-object/
-		 * @return string
-		 */
-		public function get_facebook_image_tags(){
-			if(isset($this->post) && isset($this->post->featured_image)){
-				return $this->post->featured_image->generate_image_tags();
-			}
-		}
 	}
 
 ?>
