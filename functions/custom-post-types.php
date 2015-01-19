@@ -1,6 +1,6 @@
 <?php
 
- 
+
 // Register Custom Post Types
 
 add_action( 'init', 'create_post_type' );
@@ -10,8 +10,8 @@ function create_post_type() {
 	//Pieces
 
 	$work_labels = array(
-		'name' => __( 'Works' ),
-		'singular_name' => __( 'Work' )
+		'name' => __( 'Projects' ),
+		'singular_name' => __( 'Project' )
 	);
 
 	$work_args = array(
@@ -22,7 +22,7 @@ function create_post_type() {
         'show_in_menu'       => true,
         'query_var'          => true,
         'capability_type'    => 'post',
-		'rewrite' 			 => array('slug' => 'pieces'), // We keep this slug, in order to keep back-wards compatibiltiy with urls
+		'rewrite' 			 => array('slug' => 'pieces'), // We keep this slug, in order to keep back-wards compatibility with urls
 		'has_archive'        => true,
         'hierarchical'       => false,
         'menu_position'      => null,
