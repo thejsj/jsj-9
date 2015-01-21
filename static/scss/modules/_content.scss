@@ -5,13 +5,13 @@
 		}
 	}
 	h2 {
-		text-align: center; 
+		text-align: center;
 	//	font-style: italic;
-		font-size: 2em;
+		font-size: 1.75em;
 		margin-top: 15px;
 		margin-bottom: 15px;
 		@include breakpoint(720) {
-			font-size: 4em;
+			font-size: 3em;
 		}
 		line-height: 1.1em;
 		letter-spacing: 0.02em;
@@ -27,7 +27,7 @@
 .row.featured-image {
 	text-align: center;
 	@include breakpoint(720) {
-		margin-bottom: 50px; 
+		margin-bottom: 50px;
 	}
 
 	img {
@@ -39,7 +39,7 @@
 }
 .entry-content {
 	@include breakpoint(720) {
-		margin-bottom: 50px; 
+		margin-bottom: 50px;
 	}
 	.portfolio-container & {
 		max-height: 100px;
@@ -49,13 +49,13 @@
 		font-size: 1em;
 		line-height: 1.4em;
 		@include breakpoint(720) {
-			position: absolute; 
+			position: absolute;
 			line-height: 1.5em;
 			font-size: 13px;
 			padding-right: 17px;
 		}
 	}
-	img { 
+	img {
 		&.left {
 			max-width: 350px;
 			margin-right: -120px;
